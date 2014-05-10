@@ -42,7 +42,7 @@ sql_mode=STRICT_ALL_TABLES
 
 mysql命令的工作模式
 
-*  交互式模式
+1. 交互式模式
 ```
     mysql [options] db_name
       --user=user_name, -u user_name 默认为root
