@@ -80,7 +80,6 @@ class SomeClass:
 
 
 
-## MySQL Server Product
 
  * mysqld 是服务器进程
  * mysql 是客户端命令行工具
@@ -101,3 +100,14 @@ mysql命令行所支持的参数
 mysql启动服务查找配置的顺序，并不是所有的版本都是一致，使用mysql --verbose --help可以找到当前版本查找的顺序
 
 - **/etc/my.conf**
+
+```
+[mysqld]片段中添加以下配置
+default_storage_engine=InnoDB
+    sql_mode=STRICT_ALL_TABLES
+```
+
+- **/etc/mysql/my.conf**
+- **$MYSQL\_HOME/my.conf** $MYSQL_HOME环境变量设置的目录，如果没有设置，则找mysql数据目录，即datadir=PATH
+- **--default-extra-file=<PATH/FILE>** 启动mysqld服务使用此参数
+- **~/.my.conf** 用户家目录下
