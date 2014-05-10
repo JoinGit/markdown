@@ -15,11 +15,11 @@
 mysql启动服务查找配置的顺序，并不是所有的版本都是一致，使用mysql --verbose --help可以找到当前版本查找的顺序
 
 1. /etc/my.conf
-```
+<pre>
 [mysqld]片段中添加以下配置
 default_storage_engine=InnoDB
 sql_mode=STRICT_ALL_TABLES
-```
+</pre>
 2. /etc/mysql/my.conf
 3. $MYSQL\_HOME/my.conf `$MYSQL_HOME`环境变量设置的目录，如果没有设置，则找mysql数据目录，即`datadir=PATH`
 4. --default-extra-file=<PATH/FILE> 启动mysqld服务使用此参数
