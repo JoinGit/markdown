@@ -57,3 +57,23 @@ mysql启动服务查找配置的顺序，并不是所有的版本都是一致，
 >- $MYSQL\_HOME/my.conf $MYSQL_HOME环境变量设置的目录，如果没有设置，则找mysql数据目录，>即datadir=PATH
 >- --default-extra-file=<PATH/FILE> 启动mysqld服务使用此参数
 >- ~/.my.conf 用户家目录下
+
+
+
+
+Python 示例：
+
+```python
+@requires_authorization
+def somefunc(param1='', param2=0):
+    '''A docstring'''
+    if param1 > param2: # interesting
+        print 'Greater'
+    return (param2 - param1 + 1) or None
+
+class SomeClass:
+    pass
+
+>>> message = '''interpreter
+... prompt'''
+```
