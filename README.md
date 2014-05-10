@@ -27,9 +27,7 @@
  有了标签式多文档界面、PDF 导出、内置的图片上传工具、会话管理、拼写检查、自动保存、语法高亮以及内置的 CSS 管理器，您可以随心所欲地使用 MarkdownPad。
 
 
-MySQL Server Product
+######MySQL Server Product
 
-1. mysqld 是服务器进程
-2. mysql 是客户端命令行工具
-
-查看mysqld服务支持的参数
+> * mysqld 是服务器进程
+> * mysql 是客户端命令行工具
