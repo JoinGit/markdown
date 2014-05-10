@@ -256,29 +256,29 @@ mysqladmin -u<USER> -h<HOST_NAME> password <'PASSWORD'> [-p]
   - **database**
     - **创建数据库**
 
-     ```
+     <pre>
     CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
         [create_specification] ...
     create_specification:
         [DEFAULT] CHARACTER SET [=] charset_name
       | [DEFAULT] COLLATE [=] collation_name
-     ```
+     </pre>
 
     - **修改数据库**
 
-     ```
+     <pre>
     ALTER {DATABASE | SCHEMA} [db_name]
         alter_specification ...
     alter_specification:
         [DEFAULT] CHARACTER SET [=] charset_name
       | [DEFAULT] COLLATE [=] collation_name
-     ```
+     </pre>
 
     - **删除数据库**
 
-     ```
+     <pre>
     DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
-     ```
+     </pre>
 
   - **table**
     - **创建表**(TEMPORARY指临时表)
@@ -571,7 +571,7 @@ DELETE [LOW_PRIORITY] [QUICK] [IGNORE]
     [WHERE where_condition]
 </pre>
 
-- **TRUNCATE** [TABLE] tbl_name 清空表，对于auto_increment字段会重新记数
+- **truncate** [TABLE] tbl_name 清空表，对于auto_increment字段会重新记数
 
 - **select**
 
@@ -644,15 +644,18 @@ index_list:
 - 服务器是否启动缓存功能：server variables
   - 查询缓存：show global variables like 'query_cache%';
 
-        query_cache_type 查询缓存是否被激活，取值有OFF,ON,DEMAND
-        query_cache_size 用于缓存的内存空间大小，以字节为单位，必须是1024的倍数
-        query_cache_min_res_unit 分配缓存块的最小值
-        query_cache_limit 存储缓存内容的最大结果
-        query_cache_wlock_invalidate 是否缓存其它联结已经锁定的表
+   <pre>
+    query_cache_size 用于缓存的内存空间大小，以字节为单位，必须是1024的倍数
+    query_cache_min_res_unit 分配缓存块的最小值
+    query_cache_limit 存储缓存内容的最大结果
+    query_cache_wlock_invalidate 是否缓存其它联结已经锁定的表
+   </pre>
 
 - 缓存工作统计数据查看：status variables
 
-    show global status like '%qcache%';
+  <pre>
+   show global status like '%qcache%';
+  </pre>
 
 查看sql执行分析计划
 
