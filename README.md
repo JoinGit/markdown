@@ -32,7 +32,6 @@ sql_mode=STRICT_ALL_TABLES
   - MEMORY
   - MyISAMMRG
   - InnoDB
-
     <pre>
     innodb_file_per_table=ON 每张表使用单独的表空间文件
     </pre>
