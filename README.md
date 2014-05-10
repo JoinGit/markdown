@@ -44,18 +44,18 @@ mysql命令的工作模式
 
 1. 交互式模式
 ```
-    mysql [options] db_name
-      --user=user_name, -u user_name 默认为root
-      --password[=password], -p[password] 默认为使用空密码登录。可以不输入密码直接进入交互模式下输入密码
-      --host=host_name, -h host_name 默认是localhost
-        -h localhost --> mysql.sock，基于进程间通信
-        -h 127.0.0.1 --> 3306/tcp，基于TCP/IP协议通信
-      --protocol={TCP|SOCKET|PIPE|MEMORY} 除了TCP协议，其余都是进程间通信，也就是说mysql和mysqld必须运行在同一台主机上
-        SOCKET: Linux/Unix --> mysql.sock
-        PIPE,MEMORY: Windows, IPC
-      --port=port_num, -P port_num 连接服务器TCP/IP端口
-      -e "COMMAND" 在shell命令执行mysql命令，并将结果返回到shell窗口里
-        [root@localhost init.d]# mysql -e"show databases"
+mysql [options] db_name
+  --user=user_name, -u user_name 默认为root
+  --password[=password], -p[password] 默认为使用空密码登录。可以不输入密码直接进入交互模式下输入密码
+  --host=host_name, -h host_name 默认是localhost
+    -h localhost --> mysql.sock，基于进程间通信
+    -h 127.0.0.1 --> 3306/tcp，基于TCP/IP协议通信
+  --protocol={TCP|SOCKET|PIPE|MEMORY} 除了TCP协议，其余都是进程间通信，也就是说mysql和mysqld必须运行在同一台主机上
+    SOCKET: Linux/Unix --> mysql.sock
+    PIPE,MEMORY: Windows, IPC
+  --port=port_num, -P port_num 连接服务器TCP/IP端口
+  -e "COMMAND" 在shell命令执行mysql命令，并将结果返回到shell窗口里
+    [root@localhost init.d]# mysql -e"show databases"
 ```
 2. 批处理模式
 
