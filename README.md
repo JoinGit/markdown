@@ -15,26 +15,26 @@
 mysql启动服务查找配置的顺序，并不是所有的版本都是一致，使用mysql --verbose --help可以找到当前版本查找的顺序
 
 1. /etc/my.conf
-
-   [mysqld]片段中添加以下配置
-   default_storage_engine=InnoDB
-   sql_mode=STRICT_ALL_TABLES
-
+```
+[mysqld]片段中添加以下配置
+default_storage_engine=InnoDB
+sql_mode=STRICT_ALL_TABLES
+```
 2. /etc/mysql/my.conf
 3. $MYSQL\_HOME/my.conf `$MYSQL_HOME`环境变量设置的目录，如果没有设置，则找mysql数据目录，即`datadir=PATH`
 4. --default-extra-file=<PATH/FILE> 启动mysqld服务使用此参数
 5. ~/.my.conf 用户家目录下
 
 插件式存储引擎(表类型，表级别)
-  MyISAM
-  CSV
-  MEMORY
-  MyISAMMRG
-  InnoDB
-    innodb_file_per_table=ON 每张表使用单独的表空间文件
-  Federated
-  Archive
-  Blcakhole
+  * MyISAM
+  * CSV
+  * MEMORY
+  * MyISAMMRG
+  * InnoDB
+        innodb_file_per_table=ON 每张表使用单独的表空间文件
+  * Federated
+  * Archive
+  * Blcakhole
 
 ### 2. mysql命令行
 
@@ -42,23 +42,22 @@ mysql启动服务查找配置的顺序，并不是所有的版本都是一致，
 
 mysql命令的工作模式
 
-1. 交互式模式
+*  交互式模式
 ```
-mysql [options] db_name
-  --user=user_name, -u user_name 默认为root
-  --password[=password], -p[password] 默认为使用空密码登录。可以不输入密码直接进入交互模式下输入密码
-  --host=host_name, -h host_name 默认是localhost
-    -h localhost --> mysql.sock，基于进程间通信
-    -h 127.0.0.1 --> 3306/tcp，基于TCP/IP协议通信
-  --protocol={TCP|SOCKET|PIPE|MEMORY} 除了TCP协议，其余都是进程间通信，也就是说mysql和mysqld必须运行在同一台主机上
-    SOCKET: Linux/Unix --> mysql.sock
-    PIPE,MEMORY: Windows, IPC
-  --port=port_num, -P port_num 连接服务器TCP/IP端口
-  -e "COMMAND" 在shell命令执行mysql命令，并将结果返回到shell窗口里
-    [root@localhost init.d]# mysql -e"show databases"
+    mysql [options] db_name
+      --user=user_name, -u user_name 默认为root
+      --password[=password], -p[password] 默认为使用空密码登录。可以不输入密码直接进入交互模式下输入密码
+      --host=host_name, -h host_name 默认是localhost
+        -h localhost --> mysql.sock，基于进程间通信
+        -h 127.0.0.1 --> 3306/tcp，基于TCP/IP协议通信
+      --protocol={TCP|SOCKET|PIPE|MEMORY} 除了TCP协议，其余都是进程间通信，也就是说mysql和mysqld必须运行在同一台主机上
+        SOCKET: Linux/Unix --> mysql.sock
+        PIPE,MEMORY: Windows, IPC
+      --port=port_num, -P port_num 连接服务器TCP/IP端口
+      -e "COMMAND" 在shell命令执行mysql命令，并将结果返回到shell窗口里
+        [root@localhost init.d]# mysql -e"show databases"
 ```
-2. 批处理模式
-
+* 批处理模式
 
 
 
