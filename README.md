@@ -26,12 +26,13 @@ sql_mode=STRICT_ALL_TABLES
 5. ~/.my.conf 用户家目录下
 
 **插件式存储引擎(表类型，表级别)**
+
   - MyISAM
   - CSV
   - MEMORY
   - MyISAMMRG
   - InnoDB
-        innodb_file_per_table=ON 每张表使用单独的表空间文件
+         ```innodb_file_per_table=ON 每张表使用单独的表空间文件```
   - Federated
   - Archive
   - Blcakhole
@@ -128,17 +129,534 @@ mysqladmin [OPTIONS] command[arg] command[arg]....
 </pre>
 
 **修改用户密码** select user,host,password from user;
+
 1. 使用mysqladmin命令
-`mysqladmin -u<USER> password <'PASSWORD'> [-p]`
-`mysqladmin -u<USER> -h<HOST_NAME> password <'PASSWORD'> [-p]`
-  `-p 修改用户密码，需要验证旧密码`
+<pre>
+mysqladmin -u<USER> password <'PASSWORD'> [-p]
+mysqladmin -u<USER> -h<HOST_NAME> password <'PASSWORD'> [-p]
+  -p 修改用户密码，需要验证旧密码
+</pre>
 2. 在mysql命令中
+<pre>
   1) set password for 'USER'@'HOST_NAME'=password('PASSWORD');
   2) update mysql.user set password=password('PASSWORD') where user='USER' and host='HOST_NAME';
   最后都需要执行flush privileges;
+</pre>
+
+**删除用户**
+
+1. 在mysql命令中
+<pre>
+  1) drop user 'USER'@'HOST_NAME';
+  2) delete from mysql.user where user='USER' and host='HOST_NAME';
+</pre>
+
+### 3. MySQL Server SQL Modes
+
+- 四类常用的SQL Modes
+<pre>
+    ANSI 兼容ANSI标准
+    TRADITIONAL 兼容传统数据库
+    STRICT_TRANS_TABLES 用于支持事务的表上严格限制
+    STRICT_ALL_TABLES 用于所有的表上严格限制
+</pre>
+- 设置sql_mode
+<pre>
+  1) set global|session|local sql_mode='STRICT_ALL_TABLES'; 重启后会失效
+  2) 在/etc/my.cnf中的[mysqld]分段中添加如下配置，要重启MySQL服务后才会生效
+  sql_mode=STRICT_ALL_TABLES
+</pre>
+
+### 4. MySQL数据类型
+1. 数值型
+  修饰符：not null, null, default #, unsgined(无符号), auto_increment(必须是主键或者唯一键)
+  - 整数
+<pre>
+    数据类型   有符号取值范围                                     无符号取值范围                  字节大小
+    TINYINT   -128~127(2^8/2-1)                                  0~255(2^8-1)                   1byte
+    SMALLINT  -32768~32767(2^16/2-1)                             0~65535(2^16-1)                2bytes
+    MEDIUMINT -8388608~8388607(2^24/2-1)                         0~16777215(2^24-1)             3bytes
+    INT       -2147483648~2147483647(2^32/2-1)                   0~4294967295(2^32-1)           4bytes
+    BIGINT    -9223372036854775808~9223372036854775807(2^64/2-1) 0~18446744073709551615(2^64-1) 8bytes
+</pre>
+  - 布尔型
+<pre>
+    BIT 取值：0或1
+</pre>
+  - 浮点数
+<pre>
+    FLOAT 4bytes
+      float(p)
+      floag(g,f)
+    DOUBLE 8bytes
+      double(g,f)
+</pre>
+  - 十进制
+<pre>
+    DECIMAL(g,f) g表示整体总共有多少位，f表示小数部分有多少位
+    NUMERIC(g,f)
+</pre>
+2. 字符型
+  修饰符：not null, null, default '', character set '', collation ''
+  - 不区分字母的大小写，有字符集和排序规则，以文本方式保存数据
+<pre>
+    char(0~255), varchar(0~65532)
+      char在搜索效率上要高于varchar
+      varchar在存储空间上比char节省
+    tinytext, text, mediumtext, longtext
+</pre>
+  - 区分字母大小写，没有字符集和排序规则，以二进制方式保存数据
+<pre>
+    binary(0~255), varbinary(0~65532)
+    tinyblob(255bytes), blob(65535=16Kb), mediumblob(16777215=16Mb), longblob(4294967295=4Gb) 
+</pre>
+  - enum 枚举
+<pre>
+    数组范围：1~65535个
+    example: enum('M','F')
+</pre>
+  - set 集合
+3. 日期
+  修饰符：not null, null, default
+<pre>
+  数据类型   取值范围                                    字节大小
+  date      '1000-01-01'~'9999-12-31'                   3bytes
+  datetime  '1000-01-01 00:00:01'~'9999-12-31 23:59:59' 8bytes
+  time      '-838:59:59'~'838:59:58'                    3bytes
+  timestamp '1970-01-01 00:00:00'~'2038-01-18 22:14:07' 4bytes
+    修饰符
+      with time zone
+      without time zone
+  year
+    year(2) 00~99                                       1byte
+    year(4) 1901~2155                                   1byte
+</pre>
+
+### 5. MySQL内置函数
+
+```
+ select current_date();
+ select current_time();
+ select database(); 显示当前use的数据库
+```
+
+### 6. sql statement大小写问题
+
+1. SQL关键字和系统函数不区分大小写
+2. database, table, view names是否区分大小写取决于文件系统
+  - linux上是区分大小写的
+  - windows上是不区分大写的
+3. 存储过程，存储函数，事件调度器不区分大小写，触发器区分大小写
+4. table aliases区分大小写
+5. 对于字符串，binary类型的区分大小写；非binary类型的是否区分大小写取决于设置的字符集，一般不区分大小写
+
+## DDL操作
+查看语法帮助，如：`help create database`
+- **create**, **drop**, **alter**
+  - **database**
+    - **创建数据库**
+
+     ```
+    CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
+        [create_specification] ...
+    create_specification:
+        [DEFAULT] CHARACTER SET [=] charset_name
+      | [DEFAULT] COLLATE [=] collation_name
+     ```
+
+    - **修改数据库**
+
+     ```
+    ALTER {DATABASE | SCHEMA} [db_name]
+        alter_specification ...
+    alter_specification:
+        [DEFAULT] CHARACTER SET [=] charset_name
+      | [DEFAULT] COLLATE [=] collation_name
+     ```
+
+    - **删除数据库**
+
+     ```
+    DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
+     ```
+
+  - **table**
+    - **创建表**(TEMPORARY指临时表)
+
+    <pre>
+    CREATE [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+        (create_definition,...)
+        [table_option] ...
+    Or: 表结构和数据都会复制，表字段的约束会丢失
+    CREATE [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+        [(create_definition,...)]
+        [table_option] ...
+        select_statement
+    Or: 只复制表结构，表字段的约束不会丢失
+    CREATE [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+        { LIKE old_tbl_name | (LIKE old_tbl_name) }
+
+    create_definition:
+        col_name column_definition
+      | [CONSTRAINT [symbol]] PRIMARY KEY [index_type] (index_col_name,...)
+            [index_type]
+      | {INDEX|KEY} [index_name] [index_type] (index_col_name,...)
+            [index_type]
+      | [CONSTRAINT [symbol]] UNIQUE [INDEX|KEY]
+            [index_name] [index_type] (index_col_name,...)
+            [index_type]
+      | {FULLTEXT|SPATIAL} [INDEX|KEY] [index_name] (index_col_name,...)
+            [index_type]
+      | [CONSTRAINT [symbol]] FOREIGN KEY
+            [index_name] (index_col_name,...) reference_definition
+      | CHECK (expr)
+
+    column_definition:
+        data_type [NOT NULL | NULL] [DEFAULT default_value]
+          [AUTO_INCREMENT] [UNIQUE [KEY] | [PRIMARY] KEY]
+          [COMMENT 'string'] [reference_definition]
+
+    data_type:
+        BIT[(length)]
+      | TINYINT[(length)] [UNSIGNED] [ZEROFILL]
+      | SMALLINT[(length)] [UNSIGNED] [ZEROFILL]
+      | MEDIUMINT[(length)] [UNSIGNED] [ZEROFILL]
+      | INT[(length)] [UNSIGNED] [ZEROFILL]
+      | INTEGER[(length)] [UNSIGNED] [ZEROFILL]
+      | BIGINT[(length)] [UNSIGNED] [ZEROFILL]
+      | REAL[(length,decimals)] [UNSIGNED] [ZEROFILL]
+      | DOUBLE[(length,decimals)] [UNSIGNED] [ZEROFILL]
+      | FLOAT[(length,decimals)] [UNSIGNED] [ZEROFILL]
+      | DECIMAL[(length[,decimals])] [UNSIGNED] [ZEROFILL]
+      | NUMERIC[(length[,decimals])] [UNSIGNED] [ZEROFILL]
+      | DATE
+      | TIME
+      | TIMESTAMP
+      | DATETIME
+      | YEAR
+      | CHAR[(length)]
+          [CHARACTER SET charset_name] [COLLATE collation_name]
+      | VARCHAR(length)
+          [CHARACTER SET charset_name] [COLLATE collation_name]
+      | BINARY[(length)]
+      | VARBINARY(length)
+      | TINYBLOB
+      | BLOB
+      | MEDIUMBLOB
+      | LONGBLOB
+      | TINYTEXT [BINARY]
+          [CHARACTER SET charset_name] [COLLATE collation_name]
+      | TEXT [BINARY]
+          [CHARACTER SET charset_name] [COLLATE collation_name]
+      | MEDIUMTEXT [BINARY]
+          [CHARACTER SET charset_name] [COLLATE collation_name]
+      | LONGTEXT [BINARY]
+          [CHARACTER SET charset_name] [COLLATE collation_name]
+      | ENUM(value1,value2,value3,...)
+          [CHARACTER SET charset_name] [COLLATE collation_name]
+      | SET(value1,value2,value3,...)
+          [CHARACTER SET charset_name] [COLLATE collation_name]
+      | spatial_type
+
+    index_col_name:
+        col_name [(length)] [ASC | DESC]
+
+    index_type:
+        USING {BTREE | HASH | RTREE}
+
+    reference_definition:
+        REFERENCES tbl_name (index_col_name,...)
+          [MATCH FULL | MATCH PARTIAL | MATCH SIMPLE]
+          [ON DELETE reference_option]
+          [ON UPDATE reference_option]
+
+    reference_option:
+        RESTRICT | CASCADE | SET NULL | NO ACTION
+
+    table_option:
+        {ENGINE|TYPE} [=] engine_name 表存储引擎
+      | AUTO_INCREMENT [=] value
+      | AVG_ROW_LENGTH [=] value
+      | [DEFAULT] CHARACTER SET [=] charset_name
+      | CHECKSUM [=] {0 | 1}
+      | [DEFAULT] COLLATE [=] collation_name
+      | COMMENT [=] 'string'
+      | CONNECTION [=] 'connect_string'
+      | DATA DIRECTORY [=] 'absolute path to directory'
+      | DELAY_KEY_WRITE [=] {0 | 1}
+      | INDEX DIRECTORY [=] 'absolute path to directory'
+      | INSERT_METHOD [=] { NO | FIRST | LAST }
+      | MAX_ROWS [=] value 最多存储多少行
+      | MIN_ROWS [=] value
+      | PACK_KEYS [=] {0 | 1 | DEFAULT}
+      | PASSWORD [=] 'string'
+      | ROW_FORMAT [=] {DEFAULT|DYNAMIC|FIXED|COMPRESSED|REDUNDANT|COMPACT}
+      | UNION [=] (tbl_name[,tbl_name]...)
+
+    select_statement:
+        [IGNORE | REPLACE] [AS] SELECT ...   (Some legal select statement)
+    </pre>
+
+    - **修改表结构**
+
+    <pre>
+    ALTER [IGNORE] TABLE tbl_name
+        alter_specification [, alter_specification] ...
+
+    alter_specification:
+        table_option ...
+      | ADD [COLUMN] col_name column_definition
+            [FIRST | AFTER col_name ]
+      | ADD [COLUMN] (col_name column_definition,...)
+      | ADD {INDEX|KEY} [index_name]
+            [index_type] (index_col_name,...) [index_type]
+      | ADD [CONSTRAINT [symbol]] PRIMARY KEY
+            [index_type] (index_col_name,...) [index_type]
+      | ADD [CONSTRAINT [symbol]]
+            UNIQUE [INDEX|KEY] [index_name]
+            [index_type] (index_col_name,...) [index_type]
+      | ADD [FULLTEXT|SPATIAL] [INDEX|KEY] [index_name]
+            (index_col_name,...) [index_type]
+      | ADD [CONSTRAINT [symbol]]
+            FOREIGN KEY [index_name] (index_col_name,...)
+            reference_definition
+      | ALTER [COLUMN] col_name {SET DEFAULT literal | DROP DEFAULT}
+      | CHANGE [COLUMN] old_col_name new_col_name column_definition
+            [FIRST|AFTER col_name]
+      | MODIFY [COLUMN] col_name column_definition
+            [FIRST | AFTER col_name]
+      | DROP [COLUMN] col_name
+      | DROP PRIMARY KEY
+      | DROP {INDEX|KEY} index_name
+      | DROP FOREIGN KEY fk_symbol
+      | DISABLE KEYS
+      | ENABLE KEYS
+      | RENAME [TO] new_tbl_name
+      | ORDER BY col_name [, col_name] ...
+      | CONVERT TO CHARACTER SET charset_name [COLLATE collation_name]
+      | [DEFAULT] CHARACTER SET [=] charset_name [COLLATE [=] collation_name]
+      | DISCARD TABLESPACE
+      | IMPORT TABLESPACE
+
+    index_col_name:
+        col_name [(length)] [ASC | DESC]
+
+    index_type:
+        USING {BTREE | HASH | RTREE}
+    </pre>
+
+    - **修改表名**
+
+    <pre>
+    ALTER TABLE tbl_name RENAME [TO] new_tbl_name
+    RENAME TABLE tbl_name TO new_tbl_name
+        [, tbl_name2 TO new_tbl_name2] ...
+    </pre>
+
+    - **删除表**
+
+    <pre>
+    DROP [TEMPORARY] TABLE [IF EXISTS]
+      tbl_name [, tbl_name] ...
+      [RESTRICT | CASCADE(会级联删除)]
+    </pre>
+
+  - **tablespace**
+  - **trigger**
+  - **view**
+  - **envent**
+  - **function**
+  - **index**
+    - 创建索引
+
+    <pre>
+    CREATE [UNIQUE|FULLTEXT|SPATIAL] INDEX index_name
+        [index_type]
+        ON tbl_name (index_col_name,...)
+        [index_type]
+
+    index_col_name:
+        col_name [(length)] [ASC | DESC]
+
+    index_type:
+        USING {BTREE | HASH | RTREE}
+    </pre>
+
+  - **logfile group**
+  - **procedure**
+
+## DML操作
+- **insert**
+
+<pre>
+INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
+    [INTO] tbl_name [(col_name,...)]
+    {VALUES | VALUE} ({expr | DEFAULT},...),(...),...
+    [ ON DUPLICATE KEY UPDATE
+      col_name=expr
+        [, col_name=expr] ... ]
+  example：如果已经存在则update，不执行insert操作
+  insert into user (id,name,age) values (1,'Jerry',18) on duplicate key update id=1,name='Jerry',age=18;
+
+Or:
+INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
+    [INTO] tbl_name
+    SET col_name={expr | DEFAULT}, ...
+    [ ON DUPLICATE KEY UPDATE
+      col_name=expr
+        [, col_name=expr] ... ]
+
+Or:
+INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
+    [INTO] tbl_name [(col_name,...)]
+    SELECT ...
+    [ ON DUPLICATE KEY UPDATE
+      col_name=expr
+        [, col_name=expr] ... ]
+</pre>
+
+- **replace**
+
+<pre>
+REPLACE [LOW_PRIORITY | DELAYED]
+    [INTO] tbl_name [(col_name,...)]
+    {VALUES | VALUE} ({expr | DEFAULT},...),(...),...
+
+Or:
+REPLACE [LOW_PRIORITY | DELAYED]
+    [INTO] tbl_name
+    SET col_name={expr | DEFAULT}, ...
+
+Or:
+REPLACE [LOW_PRIORITY | DELAYED]
+    [INTO] tbl_name [(col_name,...)]
+    SELECT ...
+</pre>
+
+- **update**
+
+<pre>
+Single-table syntax:
+UPDATE [LOW_PRIORITY] [IGNORE] table_reference
+    SET col_name1={expr1|DEFAULT} [, col_name2={expr2|DEFAULT}] ...
+    [WHERE where_condition]
+    [ORDER BY ...]
+    [LIMIT row_count]
+
+Multiple-table syntax:
+UPDATE [LOW_PRIORITY] [IGNORE] table_references
+    SET col_name1={expr1|DEFAULT} [, col_name2={expr2|DEFAULT}] ...
+    [WHERE where_condition]
+</pre>
+
+- **delete**
+
+<pre>
+Single-table syntax:
+DELETE [LOW_PRIORITY] [QUICK] [IGNORE] FROM tbl_name
+    [WHERE where_condition]
+    [ORDER BY ...]
+    [LIMIT row_count]
+
+Multiple-table syntax:
+DELETE [LOW_PRIORITY] [QUICK] [IGNORE]
+    tbl_name[.*] [, tbl_name[.*]] ...
+    FROM table_references
+    [WHERE where_condition]
+
+Or:
+DELETE [LOW_PRIORITY] [QUICK] [IGNORE]
+    FROM tbl_name[.*] [, tbl_name[.*]] ...
+    USING table_references
+    [WHERE where_condition]
+</pre>
+
+- **TRUNCATE** [TABLE] tbl_name 清空表，对于auto_increment字段会重新记数
+
+- **select**
+
+<pre>
+SELECT
+    [ALL | DISTINCT | DISTINCTROW ]
+      [HIGH_PRIORITY]
+      [STRAIGHT_JOIN]
+      [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]
+      [SQL_CACHE | SQL_NO_CACHE] [SQL_CALC_FOUND_ROWS]
+    select_expr [, select_expr ...]
+    [FROM table_references
+    [WHERE where_condition]
+    [GROUP BY {col_name | expr | position}
+      [ASC | DESC], ... [WITH ROLLUP]]
+    [HAVING where_condition]u
+    [ORDER BY {col_name | expr | position}
+      [ASC | DESC], ...]
+    [LIMIT {[offset,] row_count | row_count OFFSET offset}]
+    [PROCEDURE procedure_name(argument_list)]
+    [INTO OUTFILE 'file_name' export_options
+      | INTO DUMPFILE 'file_name'
+      | INTO var_name [, var_name]]
+    [FOR UPDATE | LOCK IN SHARE MODE]]
+</pre>
+
+- **join**
+
+<pre>
+MySQL supports the following JOIN syntaxes for the table_references
+part of SELECT statements and multiple-table DELETE and UPDATE
+statements:
+
+table_references:
+    table_reference [, table_reference] ...
+
+table_reference:
+    table_factor
+  | join_table
+
+table_factor:
+    tbl_name [[AS] alias] [index_hint)]
+  | table_subquery [AS] alias
+  | ( table_references )
+  | { OJ table_reference LEFT OUTER JOIN table_reference
+        ON conditional_expr }
+
+join_table:
+    table_reference [INNER | CROSS] JOIN table_factor [join_condition]
+  | table_reference STRAIGHT_JOIN table_factor
+  | table_reference STRAIGHT_JOIN table_factor ON conditional_expr
+  | table_reference {LEFT|RIGHT} [OUTER] JOIN table_reference join_condition
+  | table_reference NATURAL [{LEFT|RIGHT} [OUTER]] JOIN table_factor
+
+join_condition:
+    ON conditional_expr
+  | USING (column_list)
+
+index_hint:
+    USE {INDEX|KEY} [FOR JOIN] (index_list)
+  | IGNORE {INDEX|KEY} [FOR JOIN] (index_list)
+  | FORCE {INDEX|KEY} [FOR JOIN] (index_list)
+
+index_list:
+    index_name [, index_name] ...
+</pre>
 
 
+## 服务器缓存
+- 服务器是否启动缓存功能：server variables
+  - 查询缓存：show global variables like 'query_cache%';
 
+        query_cache_type 查询缓存是否被激活，取值有OFF,ON,DEMAND
+        query_cache_size 用于缓存的内存空间大小，以字节为单位，必须是1024的倍数
+        query_cache_min_res_unit 分配缓存块的最小值
+        query_cache_limit 存储缓存内容的最大结果
+        query_cache_wlock_invalidate 是否缓存其它联结已经锁定的表
+
+- 缓存工作统计数据查看：status variables
+
+    show global status like '%qcache%';
+
+查看sql执行分析计划
+
+    explain SELECT_SQL; 
 
 
 
