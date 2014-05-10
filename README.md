@@ -27,7 +27,33 @@
  有了标签式多文档界面、PDF 导出、内置的图片上传工具、会话管理、拼写检查、自动保存、语法高亮以及内置的 CSS 管理器，您可以随心所欲地使用 MarkdownPad。
 
 
-### MySQL Server Product
+## MySQL Server Product
 
-* mysqld 是服务器进程
-* mysql 是客户端命令行工具
+ * mysqld 是服务器进程
+ * mysql 是客户端命令行工具
+
+mysqld服务
+
+    [root@localhost ~]# service mysqld start #启动服务
+    [root@localhost ~]# service mysqld stop #关闭服务
+    [root@localhost ~]# service mysqld restart #重启服务
+    [root@localhost ~]# /etc/rc.d/init.d/mysqld --verbose #查看服务所支持的参数
+    Usage: /etc/rc.d/init.d/mysqld {start|stop|status|condrestart|restart}
+    [root@localhost ~]# netstat -tnlp #查看服务是否启动成功
+
+mysql命令行所支持的参数
+
+    [root@localhost ~]# mysql --verbose --help
+
+mysql启动服务查找配置的顺序，并不是所有的版本都是一致，使用mysql --verbose --help可以找到当前版本查找的顺序
+
+>- /etc/my.conf
+>
+>>     [mysqld]片段中添加以下配置
+>>     default_storage_engine=InnoDB
+>>     sql_mode=STRICT_ALL_TABLES
+>
+>- /etc/mysql/my.conf
+>- $MYSQL\_HOME/my.conf $MYSQL_HOME环境变量设置的目录，如果没有设置，则找mysql数据目录，>即datadir=PATH
+>- --default-extra-file=<PATH/FILE> 启动mysqld服务使用此参数
+>- ~/.my.conf 用户家目录下
