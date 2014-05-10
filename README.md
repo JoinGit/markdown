@@ -32,7 +32,10 @@ sql_mode=STRICT_ALL_TABLES
   - MEMORY
   - MyISAMMRG
   - InnoDB
-         ```innodb_file_per_table=ON 每张表使用单独的表空间文件```
+
+    <pre>
+    innodb_file_per_table=ON 每张表使用单独的表空间文件
+    </pre>
   - Federated
   - Archive
   - Blcakhole
@@ -128,7 +131,11 @@ mysqladmin [OPTIONS] command[arg] command[arg]....
   refresh 相当于执行flush-hosts和flush-logs两个命令
 </pre>
 
-**修改用户密码** select user,host,password from user;
+**查询用户**
+
+    select user,host,password from user;
+
+**修改用户密码**
 
 1. 使用mysqladmin命令
 <pre>
@@ -460,7 +467,6 @@ mysqladmin -u<USER> -h<HOST_NAME> password <'PASSWORD'> [-p]
       tbl_name [, tbl_name] ...
       [RESTRICT | CASCADE(会级联删除)]
     </pre>
-
   - **tablespace**
   - **trigger**
   - **view**
@@ -481,7 +487,6 @@ mysqladmin -u<USER> -h<HOST_NAME> password <'PASSWORD'> [-p]
     index_type:
         USING {BTREE | HASH | RTREE}
     </pre>
-
   - **logfile group**
   - **procedure**
 
@@ -641,6 +646,11 @@ index_list:
 
 
 ## 服务器缓存
+
+查看sql执行分析计划
+
+    explain SELECT_SQL; 
+
 - 服务器是否启动缓存功能：server variables
   - 查询缓存：show global variables like 'query_cache%';
 
@@ -656,42 +666,3 @@ index_list:
   <pre>
    show global status like '%qcache%';
   </pre>
-
-查看sql执行分析计划
-
-    explain SELECT_SQL; 
-
-
-
-
-
-
-
-
-## 欢迎使用 MarkdownPad 2 ##
-
-**MarkdownPad** 是 Windows 平台上一个功能完善的 Markdown 编辑器。
-### 专为 Markdown 打造 ###
-
-提供了语法高亮和方便的快捷键功能，给您最好的 Markdown 编写体验。
-来试一下：
-
-- **粗体** (`Ctrl+B`) and *斜体* (`Ctrl+I`)
-- 引用 (`Ctrl+Q`)
-- 代码块 (`Ctrl+K`)
-- 标题 1, 2, 3 (`Ctrl+1`, `Ctrl+2`, `Ctrl+3`)
-- 列表 (`Ctrl+U` and `Ctrl+Shift+O`)
-
-### 实时预览，所见即所得 ###
-
-无需猜测您的 [语法](http://markdownpad.com) 是否正确；每当您敲击键盘，实时预览功能都会立刻准确呈现出文档的显示效果。
-
-### 自由定制 ###
- 
-100% 可自定义的字体、配色、布局和样式，让您可以将 MarkdownPad 配置的得心应手。
-
-### 为高级用户而设计的稳定的 Markdown 编辑器 ###
- 
- MarkdownPad 支持多种 Markdown 解析引擎，包括 标准 Markdown 、 Markdown 扩展 (包括表格支持) 以及 GitHub 风格 Markdown 。
- 
- 有了标签式多文档界面、PDF 导出、内置的图片上传工具、会话管理、拼写检查、自动保存、语法高亮以及内置的 CSS 管理器，您可以随心所欲地使用 MarkdownPad。
