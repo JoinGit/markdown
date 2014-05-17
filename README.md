@@ -1,10 +1,13 @@
 ## Editing
 
-Ctrl + Space Ctrl + ;
+- `Ctrl + Space` **`Ctrl + ;`**
+  - Basic code completion (the name of any class, method or variable)
+  - 自动补全代码，可用于类、方法、变量
 
-    Basic code completion (the name of any class, method or variable)
-    自动补全代码，可用于类、方法、变量
 
+
+* Ctrl + Space Ctrl + ;
+* ff
 
 <table>
 	<tr>
