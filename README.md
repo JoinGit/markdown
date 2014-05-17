@@ -1,4 +1,11 @@
 ## Editing
+
+Ctrl + Space Ctrl + ;
+
+    Basic code completion (the name of any class, method or variable)
+    自动补全代码，可用于类、方法、变量
+
+
 <table>
 	<tr>
 		<th width="150px">系统设置</th>
@@ -7,10 +14,17 @@
 		<th>描述信息</th>
 	</tr>
 	<tr>
-		<td>Ctrl + Space</td>
-		<td>Ctrl + ;</td>
-		<td>Basic code completion (the name of any class, method or variable)</td>
-		<td>自动补全代码，可用于类、方法、变量</td>
+		<td colspan=4>Ctrl + Space Ctrl + ;
+		<pre>
+		Basic code completion (the name of any class, method or variable)
+		自动补全代码，可用于类、方法、变量
+		</pre>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=4><pre>Basic code completion (the name of any class, method or variable)
+		自动补全代码，可用于类、方法、变量
+		</pre></td>
 	</tr>
 	<tr>
 		<td>Ctrl + Shift + Space</td>
@@ -241,3 +255,5 @@
 		<td>关闭活动的编辑器选项卡</td>
 	</tr>
 </table>
+
+
