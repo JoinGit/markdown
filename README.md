@@ -17,7 +17,7 @@
 - `Shift + F1`
   - External Doc
   - 在浏览器中打开光标所在的类或者方法文档
-- `Ctrl +&#8201;mouse&#8201;over&#8201;code`
+- `Ctrl + mouse over code`
   - Brief Info
   - 显示类、方法、变量概要信息
 - `Ctrl + F1`
@@ -33,7 +33,7 @@
   - Implement methods
   - 弹出窗口选择要Implement的方法
 - `Ctrl + Alt + T`
-  - Surround&#8201;with…&#8201;(if..else,&#8201;try..catch, for, synchronized, etc.)
+  - Surround with… (if..else, try..catch, for, synchronized, etc.)
   - 选择代码块，添加到if/try/for/...代码块中去
 - `Ctrl + /`
   - Comment/uncomment with line comment
@@ -65,28 +65,28 @@
 - `Tab / Shift + Tab`
   - Indent/unindent selected lines
   - 缩进/取消缩进行
-- `Ctrl&#8201;+&#8201;X&#8201;or&#8201;Shift&#8201;+&#8201;Delete`
+- `Ctrl + X or Shift + Delete`
   - Cut current line or selected block to clipboard
   - 删除当前行或者选择的代码块，并复制到剪切板
-- `Ctrl&#8201;+&#8201;C&#8201;or&#8201;Ctrl&#8201;+&#8201;Insert`
+- `Ctrl + C or Ctrl + Insert`
   - Copy current line or selected block to clipboard
   - 复制当前行或者选择的代码块，并复制到剪切板
-- `Ctrl&#8201;+&#8201;V&#8201;or&#8201;Shift&#8201;+&#8201;Insert`
+- `Ctrl + V or Shift + Insert`
   - Paste from clipboard
   - 从剪切板粘帖
-- `Ctrl&#8201;+&#8201;Shift + V`
+- `Ctrl + Shift + V`
   - Paste from recent buffers...
   - 弹出窗口列举出最近使用的剪贴板内容，选择性插入
-- `Ctrl&#8201;+&#8201;D`
+- `Ctrl + D`
   - Duplicate current line or selected block
   - 复制当前行或者选择的代码块到下一行
-- `Ctrl&#8201;+&#8201;Y`
+- `Ctrl + Y`
   - Delete line at caret
   - 删除当前行或者选择的行
-- `Ctrl&#8201;+&#8201;Shift + J`
+- `Ctrl + Shift + J`
   - Smart line join
   - 合并选择的行为一行
-- `Ctrl&#8201;+&#8201;Enter`
+- `Ctrl + Enter`
   - Smart line split
   - 拆分行
 - `Shift + Enter`
@@ -107,10 +107,10 @@
 - `Ctrl + NumPad+/-`
   - Expand/collapse code block
   - 展开/折叠代码块
-- `Ctrl + Shift&#8201;+&#8201;NumPad+`
+- `Ctrl + Shift + NumPad+`
   - Expand all
   - 展开所有的代码
-- `Ctrl + Shift&#8201;+&#8201;NumPad-`
+- `Ctrl + Shift + NumPad-`
   - Collapse all
   - 折叠所有的代码
 - `Ctrl + F4`
