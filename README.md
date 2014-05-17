@@ -1,4 +1,6 @@
 ##Editing
+<div class="row">
+    <div class="span8">
 <table>
 	<tr>
 		<th width="15%">系统设置</th>
@@ -19,3 +21,5 @@
 		<td><code>自动补全代码，或者列举出相应方法和变量集合</code></td>
 	</tr>
 </table>
+    </div>
+</div>
