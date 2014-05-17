@@ -8,9 +8,6 @@
   - 自动补全代码，可用于类、方法、变量
 
 
-* Ctrl + Space Ctrl + ;
-* ff
-
 <table>
 	<tr>
 		<th width="150px">系统设置</th>
