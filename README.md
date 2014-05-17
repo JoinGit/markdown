@@ -1,10 +1,10 @@
 ##Editing
 <table>
 	<tr>
-		<td>系统设置</td>
-		<td>用户设置</td>
-		<td>描述信息</td>
-		<td>描述信息</td>
+		<th width="15%">系统设置</th>
+		<th width="15%">用户设置</th>
+		<th width="40%">描述信息</th>
+		<th width="30%">描述信息</th>
 	</tr>
 	<tr>
 		<td>Ctrl + Space</td>
