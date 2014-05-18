@@ -2,7 +2,7 @@
 - `Ctrl + Space` **替换为：**`Ctrl + ;`
   - Basic code completion (the name of any class, method or variable)
   - 自动补全代码，可用于类、方法、变量
-- `Ctrl + Shift + Space` `替换为：Ctrl + Shift + ;`
+- `Ctrl + Shift + Space` **替换为：**`Ctrl + Shift + ;`
   - Smart code completion (filters the list of methods and variables by expected type)
   - 自动补全代码，或者列举出相应方法和变量集合
 - `Ctrl + Shift + Enter`
@@ -121,13 +121,13 @@
 - `Double Shift`
   - Search everywhere
   - 查找源代码中的任何条目，类似于Ctrl + Shift + N
-- `Ctrl + F` `只保留：Ctrl + F`
+- `Ctrl + F` **只保留：**`Ctrl + F`
   - Find
   - 查找文本，支持多行查找/只在代码中查找/只在注释中查找/正则表达式
-- `F3` `只保留：Ctrl + L`
+- `F3` **只保留：**`Ctrl + L`
   - Find next
   - 查找下一个，`Ctrl + F/R`之后使用
-- `Shift + F3` `只保留：Ctrl + Shift + L`
+- `Shift + F3` **只保留：**`Ctrl + Shift + L`
   - Find previous
   - 查找上一个，`Ctrl + F/R`之后使用
 - `Ctrl + R`
@@ -170,10 +170,10 @@
 - `Alt + Shift + F9`
   - Select configuration and debug
   - 选择指定配置/文件调试
-- `Shift + F10` `替换为：Shift + F9`
+- `Shift + F10` **替换为：**`Shift + F9`
   - Run
   - 运行
-- `Shift + F9` `替换为：F9`
+- `Shift + F9` **替换为：**`F9`
   - Debug
   - 调试
 - `Ctrl + Shift + F10`
@@ -181,10 +181,10 @@
   - 从编辑器中的上下文配置运行，如：jUnit的test方法，ant中...
 
 ## Debugging
-- `F8` `替换为：F6`
+- `F8` **替换为：**`F6`
   - Step over
   - 逐行执行
-- `F7` `替换为：F5`
+- `F7` **替换为：**`F5`
   - Step into
   - 进入方法内部
 - `Alt + Shift + F7`
@@ -193,7 +193,7 @@
 - `Shift + F7`
   - Smart step into
   - 智能进入方法内部
-- `Shift + F8` `替换为：F7`
+- `Shift + F8` **替换为：**`F7`
   - Step out
   - 跳出方法
 - `Alt + F9`
@@ -202,7 +202,7 @@
 - `Alt + F8`
   - Evaluate expression
   - 弹出窗口，输入验证表达式
-- `F9` `替换为：F8`
+- `F9` **替换为：**`F8`
   - Resume program
   - 跳到下一个断点，或者恢复运行（最后一个断点情况下）
 - `Ctrl + F8`
@@ -255,7 +255,7 @@
 - `Ctrl + B or Ctrl + Click`
   - Go to declaration
   - 跳转到类/方法/变量定义处
-- `Ctrl + Alt + B` `添加：Ctrl + T`
+- `Ctrl + Alt + B` **添加：**`Ctrl + T`
   - Go to implementation(s)
   - 跳转到实现
 - `Ctrl + Shift + I`
@@ -308,16 +308,16 @@
   - 显示所有的标签
 
 ## Refactoring
-- `F5` `替换为：Shift + F10`
+- `F5` **替换为：**`Shift + F10`
   - Copy
   - 复制当前类或者文件
-- `F6` `替换为：F10`
+- `F6` **替换为：**`F10`
   - Move
   - 移动类/方法/文件
 - `Alt + Delete`
   - Safe Delete
   - 安全方式删除
-- `Shift + F6` `替换为：Shift + R`
+- `Shift + F6` **替换为：**`Shift + R`
   - Rename
   - 重命名方法/类/文件
 - `Ctrl + F6` `快捷键已取消`
@@ -376,7 +376,7 @@
 - `Alt + Shift + I`
   - Inspect current file with current profile
   - 检查当前文件与当前的配置文件
-- `Ctrl + BackQuote (`)`
+- `Ctrl + BackQuote (\`\)`
   - Quick switch current scheme
   - 快速切换配置信息，如：皮肤/快捷键/格式化代码风格等
 - `Ctrl + Alt + S`
