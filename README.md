@@ -261,7 +261,7 @@
 - `Ctrl + Shift + I`
   - Open quick definition lookup
   - 显示光标处类/方法/变量的定义信息
-- `Ctrl + Shift + B`
+- `Ctrl + Shift + B` **增加：**`F3`
   - Go to type declaration
   - 跳转到类型的定义处
 - `Ctrl + U`
@@ -376,7 +376,7 @@
 - `Alt + Shift + I`
   - Inspect current file with current profile
   - 检查当前文件与当前的配置文件
-- `Ctrl + BackQuote (\`\)`
+- ``Ctrl + BackQuote (`)``
   - Quick switch current scheme
   - 快速切换配置信息，如：皮肤/快捷键/格式化代码风格等
 - `Ctrl + Alt + S`
