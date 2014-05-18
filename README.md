@@ -211,3 +211,98 @@
 - `Ctrl + Shift + F8`
   - View breakpoints
   - 查看所有断点信息
+
+## Navigation
+- `Ctrl + N`
+  - Go to class
+  - 查找类
+- `Ctrl + Shift + N`
+  - Go to file
+  - 查找文件
+- `Ctrl + Alt + Shift + N`
+  - Go to symbol
+  - 查找方法
+- `Alt + Right/Left`
+  - Go to next/previous editor tab
+  - 切换到下一个/上一个编辑窗口
+- `F12`
+  - Go back to previous tool window
+  - 切换到最近使用的工具栏窗口
+- `Esc`
+  - Go to editor (from tool window)
+  - 在工具栏窗口切换到编辑窗口
+- `Shift + Esc`
+  - Hide active or last active window
+  - 隐藏当前（或最后活动的）工具窗口，并切换到编辑窗口
+- `Ctrl + Shift + F4`
+  - Close active run/messages/find/... tab
+  - 关闭活动选项卡
+- `Ctrl + G`
+  - Go to line
+  - 定位到指定行号
+- `Ctrl + E`
+  - Recent files popup
+  - 弹出窗口列举出最近使用的文件
+- `Ctrl + Alt + Left/Right`
+  - Navigate back/forward
+  - 导航向前/后退
+- `Ctrl + Shift + Backspace`
+  - Navigate to last edit location
+  - 导航到最近编辑的位置（可以连续操作）
+- `Alt + F1`
+  - Select current file or symbol in any view
+  - 定位文件/方法的位置在指定的视图下，如：项目结构/包目录/方法集合/磁盘位置等
+- `Ctrl + B or Ctrl + Click`
+  - Go to declaration
+  - 跳转到类/方法/变量定义处
+- `Ctrl + Alt + B` `添加：Ctrl + T`
+  - Go to implementation(s)
+  - 跳转到实现
+- `Ctrl + Shift + I`
+  - Open quick definition lookup
+  - 显示光标处类/方法/变量的定义信息
+- `Ctrl + Shift + B`
+  - Go to type declaration
+  - 跳转到类型的定义处
+- `Ctrl + U`
+  - Go to super-method/super-class
+  - 跳转到父方法/父类
+- `Alt + Up/Down`
+  - Go to previous/next method
+  - 跳转上一个/下一个方法
+- `Ctrl + ] / [`
+  - Move to code block end/start
+  - 移动到代码块结束处/开始处，并高亮{}
+- `Ctrl + F12`
+  - File structure popup
+  - 显示当前文件的结构，可以进行方法快速过滤定位
+- `Ctrl + H`
+  - Type hierarchy
+  - 显示类结构图（类的继承层次）
+- `Ctrl + Shift + H`
+  - Method hierarchy
+  - 显示方法结构图（方法的继承层次）
+- `Ctrl + Alt + H`
+  - Call hierarchy
+  - 显示方法被调用结构图
+- `F2 / Shift + F2`
+  - Next/previous highlighted error
+  - 定位到上一个/下一个错误或警告，并高亮
+- `F4 / Ctrl + Enter`
+  - Edit source / View source
+  - 在视图窗口中选择文件/方法等，快速跳转到编辑窗口中
+- `Alt + Home`
+  - Show navigation bar
+  - 光标定位到导航拦
+- `F11`
+  - Toggle bookmark
+  - 添加/删除标签（当前行）
+- `Ctrl + F11`
+  - Toggle bookmark with mnemonic
+  - 以指定数字或者字母做为添加书签；删除书签
+- `Ctrl + #[0-9]`
+  - Go to numbered bookmark
+  - 跳转到指定标记的书签，配合`Ctrl + F11`使用
+- `Shift + F11`
+  - Show bookmarks
+  - 显示所有的标签
