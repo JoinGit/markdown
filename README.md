@@ -145,3 +145,69 @@
 - `Ctrl + Shift + M`
   - Replace structurally (Ultimate Edition only)
   - 搜索替换结构，使用模板方式查找替换
+
+## Usage Search
+- `Alt + F7 / Ctrl + F7`
+  - Find usages / Find usages in file
+  - 查找类/方法/变量使用情况。`Ctrl + F7`只找当前文件
+- `Ctrl + Shift + F7`
+  - Highlight usages in file
+  - 查找类/方法/变量使用情况，只找当前文件。类似于`Ctrl + F`效果
+- `Ctrl + Alt + F7`
+  - Show usages
+  - 弹出列表窗口，显示出指定的类/方法被使用情况
+
+## Compile and Run
+- `Ctrl + F9`
+  - Make project (compile modifed and dependent)
+  - 编译项目
+- `Ctrl + Shift + F9`
+  - Compile selected file, package or module
+  - 编译选中的文件/包/模块
+- `Alt + Shift + F10`
+  - Select configuration and run
+  - 选择指定配置/文件运行
+- `Alt + Shift + F9`
+  - Select configuration and debug
+  - 选择指定配置/文件调试
+- `Shift + F10` `替换为：Shift + F9`
+  - Run
+  - 运行
+- `Shift + F9` `替换为：F9`
+  - Debug
+  - 调试
+- `Ctrl + Shift + F10`
+  - Run context configuration from editor
+  - 从编辑器中的上下文配置运行，如：jUnit的test方法，ant中...
+
+## Debugging
+- `F8` `替换为：F6`
+  - Step over
+  - 逐行执行
+- `F7` `替换为：F5`
+  - Step into
+  - 进入方法内部
+- `Alt + Shift + F7`
+  - Force step into
+  - 强制进入方法内部
+- `Shift + F7`
+  - Smart step into
+  - 智能进入方法内部
+- `Shift + F8` `替换为：F7`
+  - Step out
+  - 跳出方法
+- `Alt + F9`
+  - Run to cursor
+  - 运行到光标处所在的行
+- `Alt + F8`
+  - Evaluate expression
+  - 弹出窗口，输入验证表达式
+- `F9` `替换为：F8`
+  - Resume program
+  - 跳到下一个断点，或者恢复运行（最后一个断点情况下）
+- `Ctrl + F8`
+  - Toggle breakpoint
+  - 当前行添加/删除断点
+- `Ctrl + Shift + F8`
+  - View breakpoints
+  - 查看所有断点信息
