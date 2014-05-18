@@ -121,13 +121,13 @@
 - `Double Shift`
   - Search everywhere
   - 查找源代码中的任何条目，类似于Ctrl + Shift + N
-- `Ctrl + F`
+- `Ctrl + F` `只保留：Ctrl + F`
   - Find
   - 查找文本，支持多行查找/只在代码中查找/只在注释中查找/正则表达式
-- `F3`
+- `F3` `只保留：Ctrl + L`
   - Find next
   - 查找下一个，`Ctrl + F/R`之后使用
-- `Shift + F3`
+- `Shift + F3` `只保留：Ctrl + Shift + L`
   - Find previous
   - 查找上一个，`Ctrl + F/R`之后使用
 - `Ctrl + R`
