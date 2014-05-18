@@ -1,8 +1,8 @@
 ## Editing
-- `Ctrl + Space` `Ctrl + ;`
+- `Ctrl + Space` `替换为：Ctrl + ;`
   - Basic code completion (the name of any class, method or variable)
   - 自动补全代码，可用于类、方法、变量
-- `Ctrl + Shift + Space` `Ctrl + Shift + ;`
+- `Ctrl + Shift + Space` `替换为：Ctrl + Shift + ;`
   - Smart code completion (filters the list of methods and variables by expected type)
   - 自动补全代码，或者列举出相应方法和变量集合
 - `Ctrl + Shift + Enter`
@@ -116,3 +116,32 @@
 - `Ctrl + F4`
   - Close active editor tab
   - 关闭活动的编辑器选项卡
+
+## Search/Replace
+- `Double Shift`
+  - Search everywhere
+  - 查找源代码中的任何条目，类似于Ctrl + Shift + N
+- `Ctrl + F`
+  - Find
+  - 查找文本，支持多行查找/只在代码中查找/只在注释中查找/正则表达式
+- `F3`
+  - Find next
+  - 查找下一个，`Ctrl + F/R`之后使用
+- `Shift + F3`
+  - Find previous
+  - 查找上一个，`Ctrl + F/R`之后使用
+- `Ctrl + R`
+  - Replace
+  - 查找替换文本，支持多行查找/只在代码中查找/只在注释中查找/正则表达式
+- `Ctrl + Shift + F`
+  - Find in path
+  - 在指定路径/整个项目中查找文本，支持文件过滤
+- `Ctrl + Shift + R`
+  - Replace in path
+  - 在指定路径/整个项目中查找替换文本，支持文件过滤
+- `Ctrl + Shift + S`
+  - Search structurally (Ultimate Edition only)
+  - 搜索结构，使用模板方式查找
+- `Ctrl + Shift + M`
+  - Replace structurally (Ultimate Edition only)
+  - 搜索替换结构，使用模板方式查找替换
