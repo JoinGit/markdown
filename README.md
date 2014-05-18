@@ -1,5 +1,5 @@
 ## Editing
-- `Ctrl + Space` `替换为：Ctrl + ;`
+- `Ctrl + Space` **替换为：**`Ctrl + ;`
   - Basic code completion (the name of any class, method or variable)
   - 自动补全代码，可用于类、方法、变量
 - `Ctrl + Shift + Space` `替换为：Ctrl + Shift + ;`
