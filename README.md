@@ -341,3 +341,53 @@
 - `Ctrl + Alt + P`
   - Extract Parameter
   - 提取选中的代码块生成一个新的参数
+
+## Live Templates
+- `Ctrl + Alt + J`
+  - Surround with Live Template
+  - 选择代码块，添加到模板代码块中去
+- `Ctrl + J`
+  - Insert Live Template
+  - 插入模板代码
+    - iter Iteration according to Java SDK 1.5 style
+    - inst Check object type with instanceof and downcast it
+    - itco Iterate elements of java.util.Collection
+    - itit Iterate elements of java.util.Iterator
+    - itli Iterate elements of java.util.List
+    - psf public static final
+    - thr throw new
+
+## General
+- `Alt + #[0-9]`
+  - Open corresponding tool window
+  - 打开相应的工具窗口
+- `Ctrl + S`
+  - Save all
+  - 保存所有的文件
+- `Ctrl + Alt + Y`
+  - Synchronize
+  - 同步文件到磁盘
+- `Ctrl + Shift + F12`
+  - Toggle maximizing editor
+  - 切换最大化编辑器
+- `Alt + Shift + F`
+  - Add to Favorites
+  - 添加到收藏夹
+- `Alt + Shift + I`
+  - Inspect current file with current profile
+  - 检查当前文件与当前的配置文件
+- `Ctrl + BackQuote (`)`
+  - Quick switch current scheme
+  - 快速切换配置信息，如：皮肤/快捷键/格式化代码风格等
+- `Ctrl + Alt + S`
+  - Open Settings dialog
+  - 打开设置对话框
+- `Ctrl + Alt + Shift + S`
+  - Open Project Structure dialog
+  - 打开项目结构设置对话框
+- `Ctrl + Shift + A`
+  - Find Action
+  - 查找菜单功能/快捷键设置/配置等信息
+- `Ctrl + Tab`
+  - Switch between tabs and tool window
+  - 标签和工具窗口之间切换，选择完成之前需要先按住`Ctrl`键不放，`Up/Down/[0-9]/[a-z]`选择相应的编号
