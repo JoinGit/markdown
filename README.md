@@ -306,3 +306,38 @@
 - `Shift + F11`
   - Show bookmarks
   - 显示所有的标签
+
+## Refactoring
+- `F5` `替换为：Shift + F10`
+  - Copy
+  - 复制当前类或者文件
+- `F6` `替换为：F10`
+  - Move
+  - 移动类/方法/文件
+- `Alt + Delete`
+  - Safe Delete
+  - 安全方式删除
+- `Shift + F6` `替换为：Shift + R`
+  - Rename
+  - 重命名方法/类/文件
+- `Ctrl + F6` `快捷键已取消`
+  - Change Signature
+  - 更改签名
+- `Ctrl + Alt + N`
+  - Inline
+  - 将方法/类重构为内联方法/匿名类
+- `Ctrl + Alt + M`
+  - Extract Method
+  - 提取选中的代码块生成一个新的方法
+- `Ctrl + Alt + V`
+  - Extract Variable
+  - 提取选中的代码块生成一个新的变量
+- `Ctrl + Alt + F`
+  - Extract Field
+  - 提取选中的代码块生成一个新的属性
+- `Ctrl + Alt + C`
+  - Extract Constant
+  - 提取选中的代码块生成一个新的常量
+- `Ctrl + Alt + P`
+  - Extract Parameter
+  - 提取选中的代码块生成一个新的参数
