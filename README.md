@@ -1,4 +1,17 @@
+## Jump to Section
+
+* [Python文件类型](#python%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B)
+* [Python变量](#python%E5%8F%98%E9%87%8F)
+* [Python运算符](#python%E8%BF%90%E7%AE%97%E7%AC%A6)
+* [Python数据类型](#python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
+* [Python序列](#python%E5%BA%8F%E5%88%97)
+* []()
+* []()
+* []()
+
 ## Python文件类型
+
+[[Back To Top]](#jump-to-section)
 
 - 源代码
   - Python源代码的文件以`*.py`为扩展名，由`python`命令解释执行，不需要编译
@@ -45,6 +58,8 @@
 
 ## Python变量
 
+[[Back To Top]](#jump-to-section)
+
 **变量是计算机内存中的一块区域，变量可以存储规定范围内的值，而且值可以改变。**
 
 - 变量的命名
@@ -75,6 +90,9 @@
   ```
 
 ## Python运算符
+
+[[Back To Top]](#jump-to-section)
+
 - 算术运算符
   - 加法：`+`
   ```python
@@ -193,6 +211,9 @@
    </pre>
 
 ## Python数据类型
+
+[[Back To Top]](#jump-to-section)
+
 - 数字类型
   - 整型：`int`，范围`-2,147,483,648~2,147,483,647`
   ```python
@@ -316,6 +337,8 @@
   ```
 
 ## Python序列
+
+[[Back To Top]](#jump-to-section)
 
 **列表、元组和字符串都是序列**
 
