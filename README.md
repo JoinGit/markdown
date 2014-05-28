@@ -209,3 +209,48 @@
 
 ## Python数据类型
 
+- 数字类型
+  - 整型：`int`，范围`-2,147,483,648~2,147,483,647`
+   <pre>
+    $ python
+    >>> num=21435435
+    >>> type(num)
+    `<`type 'int'`>`
+   </pre>
+  - 长整型：`long`，范围可以是任意大的整数均可以储存，也可以在普通整数后加`L`或`l`强制声明。
+   <pre>
+    $ python
+    >>> num=9999999999999999999
+    >>> type(num)
+    `<`type 'long'`>`
+    >>> num=123L
+    >>> type(num)
+    `<`type 'long'`>`
+   </pre>
+  - 浮点型：`float`，加上`.`声明即可
+   <pre>
+    $ python
+    >>> num=1.0
+    >>> type(num)
+    `<`type 'float'`>`
+   </pre>
+  - 复数型：`complex`，加上`j`声明即可
+   <pre>
+    $ python
+    >>> num=3.14j
+    >>> type(num)
+    `<`type 'complex'`>`
+    >>> num
+    3.14j
+   </pre>
+- 字符串：`String`
+  - 使用引号定义的一组集合，可以包含数字、字母、符号（非特殊系统符号）
+  - 三重引号（docstring）通常用来制作字符串
+   <pre>
+    $ python
+    >>> str='string'
+    >>> str="string"
+    >>> str="""string"""
+    >>> type(str)
+    `<`type 'str'`>`
+   </pre>
