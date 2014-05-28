@@ -273,7 +273,6 @@
       How are you?
            Gooodbye!
 
-    >>>
    </pre>
   - 操作字符串：索引、连接、截取
    <pre>
