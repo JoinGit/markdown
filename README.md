@@ -1,13 +1,21 @@
 ## Jump to Section
 
+* [Python注意点]()
 * [Python文件类型](#python%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B)
 * [Python变量](#python%E5%8F%98%E9%87%8F)
 * [Python运算符](#python%E8%BF%90%E7%AE%97%E7%AC%A6)
 * [Python数据类型](#python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
 * [Python序列](#python%E5%BA%8F%E5%88%97)
+* [Python流程控制]()
 * []()
 * []()
-* []()
+
+## Python注意点
+
+[[Back To Top]](#jump-to-section)
+
+- `Python`中，表示方法比较特殊，是用相同缩进的一条或多条语句来表示的，建议使用4个空格作为缩进
+
 
 ## Python文件类型
 
@@ -336,7 +344,7 @@
   1
   ```
 - 字典：`dict`
-  - [jump to api doc](https://docs.python.org/2/library/stdtypes.html#dict)
+  - [jump to api doc](https://docs.python.org/2/library/stdtypes.html#mapping-types-dict)
   - 字典是`Python`中唯一的映射类型（哈希表）
   - 字典对象是可变的，但字典的键必须使用不可变对象，并且一个字典中可以使用不同类型的键值
   - 定义字典的几种方式
@@ -468,4 +476,15 @@
   11
   >>> min('abc')
   'a'
+  ```
+
+## Python流程控制
+
+[[Back To Top]](#jump-to-section)
+
+- `if`
+  - 语法格式
+  ```python
+  if expression:
+      statement(s)
   ```
