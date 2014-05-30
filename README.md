@@ -335,6 +335,93 @@
   >>> c3
   1
   ```
+- 字典：`dict`
+  - [jump to api doc](https://docs.python.org/2/library/stdtypes.html#dict)
+  - 字典是`Python`中唯一的映射类型（哈希表）
+  - 字典对象是可变的，但字典的键必须使用不可变对象，并且一个字典中可以使用不同类型的键值
+  - 定义字典的几种方式
+  ```python
+  >>> a = dict(one=1, two=2, three=3)
+  >>> b = {'one': 1, 'two': 2, 'three': 3}
+  >>> c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+  >>> d = dict([('two', 2), ('one', 1), ('three', 3)])
+  >>> e = dict({'three': 3, 'one': 1, 'two': 2})
+  >>> a == b == c == d == e
+  True
+  >>> type(a)
+  <type 'dict'>
+  ```
+  - `d.items()` 返回所有的键值对
+  ```python
+  >>> a.items()
+  [('three', 3), ('two', 2), ('one', 1)]
+  ```
+  - `d.keys()` 返回键列表
+  ```python
+  >>> a.keys()
+  ['three', 'two', 'one']
+  ```
+  - `d.values()` 返回值列表
+  ```python
+  >>> a.values()
+  [3, 2, 1]
+  ```
+  - `d[key]` 获取`key`对应的`value`
+  ```python
+  >>> b["one"]
+  1
+  ```
+  - `get(key[, default])` 获取`key`的`value`，如果没有`key`，则返回`default`；如果没有`default`，则没有值也不会报错
+  ```python
+  >>> a.get("one")
+  1
+  >>> a.get("one1",222)
+  2
+  ```
+  - `d[key] = value` 设置`key`的`value`或者增加一个`item`
+  ```python
+  >>> a['one']=111
+  >>> a['one']
+  111
+  ```
+  - `del d[key]或者del(d[key])` 删除`key`
+  ```python
+  >>> del a["one"]
+  ```
+  - `key in d` 是否存在`key`
+  ```python
+  >>> "one" in a
+  False
+  ```
+  - d.has_key(key) 是否存在`key`，建议使用`key in d`代替
+  ```python
+  >>> a.has_key("one")
+  False
+  ```
+  - `key not in d`是否不存在`key`
+  ```python
+  >>> "one" not in a
+  True
+  ```
+  - `d.clar()` 移除所有的`items`
+  ```python
+  >>> a.clear()
+  >>> a
+  {}
+  ```
+  - `d.copy()` 复制字典
+  ```python
+  >>> a=b.copy()
+  >>> a
+  {'one': 1, 'three': 3, 'two': 2}
+  ```
+  - `pop(key[, default])` 删除`key`，并返回`value`；如果没有`key`，则返回`default`，如果`default`没有，则会报错
+  ```python
+  >>> a.pop("one",111)
+  1
+  >>> a.pop("one",111)
+  111
+  ```
 
 ## Python序列
 
