@@ -1,12 +1,12 @@
 ## Jump to Section
 
-* [Python注意点]()
+* [Python注意点](#python%E6%B3%A8%E6%84%8F%E7%82%B9)
 * [Python文件类型](#python%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B)
 * [Python变量](#python%E5%8F%98%E9%87%8F)
 * [Python运算符](#python%E8%BF%90%E7%AE%97%E7%AC%A6)
 * [Python数据类型](#python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
 * [Python序列](#python%E5%BA%8F%E5%88%97)
-* [Python流程控制]()
+* [Python流程控制](#python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6)
 * []()
 * []()
 
