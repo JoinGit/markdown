@@ -1,3 +1,5 @@
+## 暂存区和HEAD概念
+
 * 暂存区，称为stage或index，是一个介于工作区和版本库的中间状态，当执行提交时，实际上是将暂存区的内容提交到版本库中。
 * HEAD实际是指向当前分支的一个游标，代表版本库中最近的一次提交
 * 符号^可以用于指代父提交
@@ -7,42 +9,41 @@
 
 
 ## git config
-`git config [options]` 配置生效优先级：3 > 2 > 1
-
+- 配置生效优先级：`--local` > `--global` > `--system`
   1. `/etc/gitconfig` 对所有用户都适用的配置，使用`git cofing --system`
   2. `~/.gitconfig` 用户目录下的配置，使用`git config --global`
   3. `.git/config` 工作目录下的配置，使用`git config --local`
-
-```
-git config -e [<--system> | <--global> | <--local>] 打开文本编辑器进行编辑，省略配置文件位置时，则选择工作目录下的配置
-git config -l
-git config --list
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
-git config --global core.editor vim 设置文本编辑器
-git config --global color.ui true
-git config --global alias.st status 设置别名
-git config receive.denyNonFastForwards true 禁止非快进试推送
-git config --global merge.tool kdiff3
-git config --global core.autocrlf false/true/input
- 1) 在Windows系统上，把它设置成true，这样当签出代码时，LF会被转换成CRLF
- 2) Linux或Mac系统上，因此你不想Git 在签出文件时进行自动的转换；当一个以CRLF为行结束符的文件不小心被引入时你肯定想进行修正，设置成input来告诉Git在提交时把CRLF转换成LF，签出时不转换
- 3) 如果仅运行在Windows上的项目，可以设置false取消此功能，把回车符记录在库中
-git config --global core.whitespace trailing-space,space-before-tab,indent-with-non-tab
- 1) 默认被打开的2个选项是trailing-space和space-before-tab，trailing-space会查找每行结尾的空格，space-before-tab会查找每行开头的制表符前的空格。
- 2) 默认被关闭的2个选项是indent-with-non-tab和cr-at-eol，indent-with-non-tab会查找8个以上空格（非制表符）开头的行，cr-at-eol让Git 知道行尾回车符是合法的。
-git config --global diff.word.textconv strings 在比较前把Word文件转换成文本文件
-git config user.name 查看某个环境变量的设定
-git config --global http.proxy http://130.147.222.32:808 设置http代理，适用于http_proxy, https_proxy
- 1) 或者直接在命令行中设置
-    export HTTPS_PROXY=http://130.147.222.32:808
- 2) 或者在~/.bashrc中设置
-    export http_proxy=http://130.147.222.32:808
-    export https_proxy=http://130.147.222.32:808
-    export ftp_proxy=http://130.147.222.32:808
-    export no_proxy='.example.com'
-```
-
+- `git config [options]`
+- `git config -e [<--system> | <--global> | <--local>]` 打开文本编辑器进行编辑，省略配置文件位置时，则选择工作目录下的配置
+- `git config -l | --list` 查看配置信息
+- `git config --global user.name "John Doe"`
+- `git config --global user.email johndoe@example.com`
+- `git config --global core.editor vim` 设置文本编辑器
+- `git config --global color.ui true`
+- `git config --global alias.st status` 设置别名
+- `git config receive.denyNonFastForwards true` 禁止非快进试推送
+- `git config --global merge.tool kdiff3`
+- `git config --global core.autocrlf false/true/input`
+  1. 在`Windows`系统上，把它设置成`true`，这样当签出代码时，`LF`会被转换成`CRLF`
+  2. `Linux`或`Mac`系统上，因此你不想`Git` 在签出文件时进行自动的转换；当一个以`CRLF`为行结束符的文件不小心被引入时你肯定想进行修正，设置成`input`来告诉`Git`在提交时把`CRLF`转换成`LF`，签出时不转换
+  3.  如果仅运行在`Windows`上的项目，可以设置`false`取消此功能，把回车符记录在库中
+- `git config --global core.whitespace trailing-space,space-before-tab,indent-with-non-tab`
+  1.  默认被打开的2个选项是`trailing-space`和`space-before-tab`，`trailing-space`会查找每行结尾的空格，`space-before-tab`会查找每行开头的制表符前的空格。
+  2.  默认被关闭的2个选项是`indent-with-non-tab`和`cr-at-eol`，`indent-with-non-tab`会查找8个以上空格（非制表符）开头的行，`cr-at-eol`让`Git`知道行尾回车符是合法的。
+- `git config --global diff.word.textconv strings` 在比较前把`Word`文件转换成文本文件
+- `git config user.name 查看某个环境变量的设定
+- `git config --global http.proxy http://130.147.222.32:808` 设置`http`代理，适用于`http_proxy`, `https_proxy`
+  - 或者直接在命令行中设置
+   ```
+   export HTTPS_PROXY=http://130.147.222.32:808
+   ```
+  - 或者在~/.bashrc中设置
+   ```
+   export http_proxy=http://130.147.222.32:808
+   export https_proxy=http://130.147.222.32:808
+   export ftp_proxy=http://130.147.222.32:808
+   export no_proxy='.example.com'
+   ```
 
 ## git clone
 
