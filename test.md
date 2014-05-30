@@ -13,22 +13,27 @@
   - 如果目标`SVN`仓库文件太大，在`clone`完成之后执行`git gc`进行压缩磁盘空间。
 
 2. 拉取服务器上所有最新的改变，在此基础上衍合你的修改
-```
-git svn rebase
-```
+   ```
+   git svn rebase
+   ```
 
 3. 如果既要向`Git`远程服务器推送内容，又要推送到`Subversion`远程服务器，
 则必须先向`Subversion`推送（`dcommit`），因为该操作会改变所提交的数据内容。
-```
-git svn dcommit
-```
+   ```
+   git svn dcommit
+   ```
 
-4. 要在`Subversion`中建立一个新分支，需要运行`git svn branch [分支名]`
-```
-git svn show-ignore
-git svn log
-git svn info
-```
+4. 要在`Subversion`中建立一个新分支
+   ```
+   git svn branch [分支名]
+   ```
+
+5. `git svn`其它操作
+   ```
+   git svn show-ignore
+   git svn log
+   git svn info
+   ```
 
 
 
@@ -36,46 +41,49 @@ git svn info
 
 ---
 
-```
-git svn clone https://localhost:8443/svn/test1 -s --prefix=mytest1/
-  --prefix 用于设置在.git/refs/remotes下保存引用时的的前缀
-  -s 即标准的版本库，trun/branches/tags会以git的分支展示（使用git checkout切换），而不是svn中看到的三个目录
-测试下来是不支持git svn fetch加版本号复制
-```
+1. `Git`复制`Subversion`仓库
+   ```
+   git svn clone https://localhost:8443/svn/test1 -s --prefix=mytest1/
+     --prefix 用于设置在.git/refs/remotes下保存引用时的的前缀
+     -s 即标准的版本库，trun/branches/tags会以git的分支展示（使用git checkout切换），而不是svn中看到的三个目录
+   测试下来是不支持git svn fetch加版本号复制
+   ```
 
-`git config -l` 其中有三条`svn url`信息生成
-```
-svn-remote.svn.url=https://localhost:8443/svn/test1
-svn-remote.svn.fetch=trunk:refs/remotes/mytest1/trunk
-svn-remote.svn.branches=branches/*:refs/remotes/mytest1/
-svn-remote.svn.tags=tags/*:refs/remotes/mytest1/tags/*
-```
+2. `git config -l` 其中有三条`svn url`信息生成
+   ```
+   svn-remote.svn.url=https://localhost:8443/svn/test1
+   svn-remote.svn.fetch=trunk:refs/remotes/mytest1/trunk
+   svn-remote.svn.branches=branches/*:refs/remotes/mytest1/
+   svn-remote.svn.tags=tags/*:refs/remotes/mytest1/tags/*
+   ```
 
-查看分支上`svn url`信息
-`git svn info`
+3. 查看分支上`svn url`信息
+   ```
+   git svn info
+   ```
 
-查看`remote`上所有`branch`信息
-```
-$ git branch -r
-  mytest1/trunk
-  mytest1/v1.1
-```
+4. 查看`remote`上所有`branch`信息
+   ```
+   $ git branch -r
+     mytest1/trunk
+     mytest1/v1.1
+   ```
 
-查看分支信息
-```
-$ git branch
-  b1
-  master
-```
+5. 查看分支信息
+   ```
+   $ git branch
+     b1
+     master
+   ```
 
-1. 如果基于`master`也就是`svn trunk`创建分支
+6. 如果基于`master`也就是`svn trunk`创建分支
   - `git checkout -a b1`
   - 然后在`b1`分支上可以直接使用`git svn rebase`更新和`git svn dcommit`进行提交
   - 这个时候再去`master`上使用`git svn rebase`可以直接获取到刚才在分支`b1`上修改的内容，
   - 感觉不应该在`git`分支上直接使用`git svn rebase`和`git svn dcommit`上操作，否则分支也就没有多大意义了。
   - 也可以先在`b1`分支上修改完，在`merge`回`master`，然后在`master`上做`git svn`操作，这样就比较符合`git`思想了。
 
-2. 直接`git checkout mytest1/v1.1`
+7. 直接`git checkout mytest1/v1.1`
   - 同样也可以直接使用`git svn rebase`更新和`git svn dcommit`进行提交，但会使分支处于`Detached`状态，
   - `commit`之后，切换到`master`后刚才游离分支就没有了。
   - 直接从`svn branch`分支成`checkout`为git分支，还不知道这怎么操作，貌似好像不支持。
