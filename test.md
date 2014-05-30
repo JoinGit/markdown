@@ -1,24 +1,30 @@
 **Target SVN Repository url: https://localhost:8443/svn/test1**
 
 
-## Tracking and contributing to the trunk of a Subversion-managed project (ignoring tags and branches):
+**Tracking and contributing to the trunk of a Subversion-managed project (ignoring tags and branches):**
 
-1. git复制svn仓库
+---
+
+1. `Git`复制`Subversion`仓库
   - `git svn clone https://localhost:8443/svn/test1 [项目别名]`
-  - 或者使用某个版本号进行加速复制，不是必须的
-  - `git svn init https://localhost:8443/svn/test1 [项目别名]`
-  - `git svn fetch [-r 版本号:HEAD]` #如果使用了版本号，则之前的`log`信息在git中是看不到的。
+  - 或者使用某个版本号进行加速复制，则这个版本号之前的`log`信息在`git`中是看不到的。
+    1. `git svn init https://localhost:8443/svn/test1 [项目别名]`
+    2. `git svn fetch [-r 版本号:HEAD]` #如果使用了版本号
   - 如果目标`SVN`仓库文件太大，在`clone`完成之后执行`git gc`进行压缩磁盘空间。
 
 2. 拉取服务器上所有最新的改变，在此基础上衍合你的修改
-`git svn rebase`
+```
+git svn rebase
+```
 
 3. 如果既要向`Git`远程服务器推送内容，又要推送到`Subversion`远程服务器，
 则必须先向`Subversion`推送（`dcommit`），因为该操作会改变所提交的数据内容。
-`git svn dcommit`
+```
+git svn dcommit
+```
 
 4. 要在`Subversion`中建立一个新分支，需要运行`git svn branch [分支名]`
-```git
+```
 git svn show-ignore
 git svn log
 git svn info
@@ -26,9 +32,11 @@ git svn info
 
 
 
-## Tracking and contributing to an entire Subversion-managed project (complete with a trunk, tags and branches):
+**Tracking and contributing to an entire Subversion-managed project (complete with a trunk, tags and branches):**
 
-```git
+---
+
+```
 git svn clone https://localhost:8443/svn/test1 -s --prefix=mytest1/
   --prefix 用于设置在.git/refs/remotes下保存引用时的的前缀
   -s 即标准的版本库，trun/branches/tags会以git的分支展示（使用git checkout切换），而不是svn中看到的三个目录
@@ -36,7 +44,7 @@ git svn clone https://localhost:8443/svn/test1 -s --prefix=mytest1/
 ```
 
 `git config -l` 其中有三条`svn url`信息生成
-```git
+```
 svn-remote.svn.url=https://localhost:8443/svn/test1
 svn-remote.svn.fetch=trunk:refs/remotes/mytest1/trunk
 svn-remote.svn.branches=branches/*:refs/remotes/mytest1/
@@ -47,14 +55,14 @@ svn-remote.svn.tags=tags/*:refs/remotes/mytest1/tags/*
 `git svn info`
 
 查看`remote`上所有`branch`信息
-```git
+```
 $ git branch -r
   mytest1/trunk
   mytest1/v1.1
 ```
 
 查看分支信息
-```git
+```
 $ git branch
   b1
   master
