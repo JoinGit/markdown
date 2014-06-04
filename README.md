@@ -310,7 +310,7 @@
   >>> str[3::-1]
   '4321'
   ```
-- 元组（类似于java中的数组）：`tuple`
+- 元组（类似于`Java`中的数组）：`tuple`
   - 一旦生成，不可以改变
   - 固定长度，支持嵌套
   - 通过偏移读取
@@ -482,9 +482,45 @@
 
 [[Back To Top]](#jump-to-section)
 
-- `if`
+- 逻辑运算符：`and/or/not`
+  - 类似于`Java`中的`and/or/!`
+- `if/elif/else`
+  - [jump to api doc](https://docs.python.org/2/reference/compound_stmts.html#the-if-statement)
   - 语法格式
   ```python
   if expression:
-      statement(s)
+      suite
+  elsif expression:
+      suite
+  else
+      suite
+  ```
+  - 示例
+  ```python
+  if 1 > 2 and 2 > 3:
+      print "hello"
+      print "world"
+  elif 2 > 3 or 1 > 2:
+      print "2 > 3"
+  elif not 3 > 2:
+      print "3 > 2"
+  else:
+      print "else"
+  ```
+- `for`
+  - [jump to api doc](https://docs.python.org/2/reference/compound_stmts.html#the-for-statement)
+  - 语法格式
+  ```python
+  for target_list in expression_list :
+    suite
+  else
+    suite
+  ```
+  - 示例
+  ```python
+  for letter in 'Python':
+    print 'Current Letter:', letter
+  fruits=['banana','apple','mango']
+  for fruit in fruits:
+    print 'Current fruit:', fruit
   ```
