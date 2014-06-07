@@ -11,8 +11,8 @@ alert('</scr'+'ipt>');
 使用`src`引用外部`*.js`文件的时候必须使用`</script>`，不能是`/>`结尾。在`script`之间添加的任何`JavaScript`代码都不会被执行。
 
 ```
-<script type="text/javascript" src="xxx.js"></script> //正确引用
-<script type="text/javascript" src="xxx.js"/> //错误引用
+<script type="text/javascript" src="xxx.js"></script> //正确用法
+<script type="text/javascript" src="xxx.js"/> //错误用法
 <script type="text/javascript" src="xxx.js">
 alert('不会被执行！！！');
 </script>
@@ -23,9 +23,9 @@ alert('不会被执行！！！');
 [[Back To Top]](#jump-to-section)
 
 标识符用来对变量、函数、属性等进行命名。标识符命名规则如下：
- - 第一字符必须是字母、下划线`_`、美元符号`$`。
- - 其他字符可以是字母、下划线`_`、美元符号`$`或数字。
- - 不能把关键字、保留字作为标识符。
+- 第一字符必须是字母、下划线`_`、美元符号`$`。
+- 其他字符可以是字母、下划线`_`、美元符号`$`或数字。
+- 不能把关键字、保留字作为标识符。
 
 ## 运算符
 
