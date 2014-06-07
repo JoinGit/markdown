@@ -98,8 +98,11 @@ alert('不会被执行！！！');
 **Undefined类型**
 
 - 首字母大写的`Undefined`表示的是一种数据类型，小写的`undefined`表示的是属于这种数据类型的唯一的一个值
+
 - 一个未初始化的变量的值为`undefined`，一个没有传入实参的形参变量的值为`undefined`，如果一个函数什么都不返回，则该函数默认返回`undefined`
+
 - 一个值未定义的顶层属性；`undefined`同时也是原始值
+
 - 使用严格相等运算符来判断一个值是否是`undefined`
 
  ```javascript
@@ -110,6 +113,8 @@ alert('不会被执行！！！');
  else {
     // 不会执行到这里
  }
- <!-- 注: 这里必须使用严格相等运算符===，而不能使用普通的相等运算符==，
- 因为x == undefined成立还可能是因为x为null，在JavaScript中null== undefined是返回true的 -->
+ /*
+ 注意: 这里必须使用严格相等运算符===，而不能使用普通的相等运算符==，
+ 因为x == undefined成立还可能是因为x为null，在JavaScript中null== undefined是返回true的 
+ */
  ```
