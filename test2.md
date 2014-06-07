@@ -31,62 +31,63 @@ alert('不会被执行！！！');
 
 [[Back To Top]](#jump-to-section)
 
-**typeof(expression)**
+**typeof(*expression*)**
 
 - 操作符返回一个字符串，括号是可有可无的
 
-| 操作数类型    | 返回值        |
-| ------------- |:-------------:|
-| undefined     | "undefined"   |
-| Null          | "object"      |
-| Boolean       | "boolean"     |
-| String        | "string"      |
-| Number        | "number"      |
-| Object        | "object"      |
-| Array         | "object"      |
-| Function      | "function"    |
+ | 操作数类型    | 返回值        |
+ | ------------- |:-------------:|
+ | undefined     | "undefined"   |
+ | Null          | "object"      |
+ | Boolean       | "boolean"     |
+ | String        | "string"      |
+ | Number        | "number"      |
+ | Object        | "object"      |
+ | Array         | "object"      |
+ | Function      | "function"    |
 
-- 普通用法
+- 用法
 
-```javascript
-// Numbers
-typeof 37 === 'number';
-typeof 3.14 === 'number';
-typeof Math.LN2 === 'number';
-typeof Infinity === 'number';
-typeof NaN === 'number'; // 尽管NaN是"Not-A-Number"的缩写,意思是"不是一个数字"
-typeof Number(1) === 'number'; // 不要这样使用!
+ ```javascript
+ // Numbers
+ typeof 37 === 'number';
+ typeof 3.14 === 'number';
+ typeof Math.LN2 === 'number';
+ typeof Infinity === 'number';
+ typeof NaN === 'number'; // 尽管NaN是"Not-A-Number"的缩写,意思是"不是一个数字"
+ typeof Number(1) === 'number'; // 不要这样使用!
 
-// Strings
-typeof "" === 'string';
-typeof "bla" === 'string';
-typeof (typeof 1) === 'string'; // typeof返回的肯定是一个字符串
-typeof String("abc") === 'string'; // 不要这样使用!
+ // Strings
+ typeof "" === 'string';
+ typeof "bla" === 'string';
+ typeof (typeof 1) === 'string'; // typeof返回的肯定是一个字符串
+ typeof String("abc") === 'string'; // 不要这样使用!
 
-// Booleans
-typeof true === 'boolean';
-typeof false === 'boolean';
-typeof Boolean(true) === 'boolean'; // 不要这样使用!
+ // Booleans
+ typeof true === 'boolean';
+ typeof false === 'boolean';
+ typeof Boolean(true) === 'boolean'; // 不要这样使用!
 
-// Undefined
-typeof undefined === 'undefined';
-typeof blabla === 'undefined'; // 一个未定义的变量,或者一个定义了却未赋初值的变量
+ // Undefined
+ typeof undefined === 'undefined';
+ typeof blabla === 'undefined'; // 一个未定义的变量,或者一个定义了却未赋初值的变量
 
-// Objects
-typeof {a:1} === 'object';
-typeof [1, 2, 4] === 'object'; // 使用Array.isArray或者Object.prototype.toString.call方法可以分辨出一个数组和真实的对象
-typeof new Date() === 'object';
+ // Objects
+ typeof {a:1} === 'object';
+ typeof [1, 2, 4] === 'object'; // 使用Array.isArray或者Object.prototype.toString.call方法可以分辨出一个数组和真实的对象
+ typeof new Date() === 'object';
 
-typeof new Boolean(true) === 'object' // 令人困惑.不要这样使用
-typeof new Number(1) === 'object' // 令人困惑.不要这样使用
-typeof new String("abc") === 'object';  // 令人困惑.不要这样使用
-// Functions
-typeof function(){} === 'function';
-typeof Math.sin === 'function';
+ typeof new Boolean(true) === 'object' // 令人困惑.不要这样使用
+ typeof new Number(1) === 'object' // 令人困惑.不要这样使用
+ typeof new String("abc") === 'object';  // 令人困惑.不要这样使用
 
-// null
-typeof null === 'object'; // 从JavaScript诞生以来,一直是这样的.
-```
+ // Functions
+ typeof function(){} === 'function';
+ typeof Math.sin === 'function';
+
+ // null
+ typeof null === 'object'; // 从JavaScript诞生以来,一直是这样的.
+ ```
 
 ## 数据类型
 
