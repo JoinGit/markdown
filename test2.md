@@ -115,6 +115,39 @@ alert('不会被执行！！！');
  }
  /*
  注意: 这里必须使用严格相等运算符===，而不能使用普通的相等运算符==，
- 因为x == undefined成立还可能是因为x为null，在JavaScript中null== undefined是返回true的 
+ 因为x == undefined成立还可能是因为x为null，在JavaScript中null== undefined是返回true的
  */
  ```
+
+- 另外还可以使用`typeof`来判断
+
+ ```javascript
+ var x;
+ if (typeof x === 'undefined') {
+    // 执行到这里
+ }
+ ```
+
+- 有时必须使用`typeof`的原因是，如果一个变量根本没有被声明，只有使用`typeof`判断才不会报错，用相等运算符判断会抛出异常
+ ```javascript
+ // x没有被声明过
+ if (typeof x === 'undefined') { // 不会报错
+    // these statements execute
+ }
+
+ if(x === undefined){ // 抛出ReferenceError异常
+
+ }
+ ```
+
+ **Null类型**
+
+ - `Null`类型是一个只有一个值的数据类型，即特殊的值`null`。它表示一个空对象引用(指针)，而`typeof null`会返回`object`
+ - 一个特殊的用于表示空值的关键字；同时`null`也是一个原始(`primitive`)值
+ - `undefined`是派生自`null`的，因此`undefined == null`返回`true`。如果要比较`undefined`和`null`，可以采用`typeof`方式或者`===`方式进行比较
+  ```javascript
+  var box;
+  var car = null;
+  alert(typeof box == typeof car); // false
+  alert(box === car); // false
+  ```
