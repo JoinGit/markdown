@@ -142,8 +142,8 @@ alert('不会被执行！！！');
 
  - `Null`类型是一个只有一个值的数据类型，即特殊的值`null`。它表示一个空对象引用(指针)，而`typeof null`会返回`object`
  - 一个特殊的用于表示空值的关键字；同时`null`也是一个原始(`primitive`)值
-
  - `undefined`是派生自`null`的，因此`undefined == null`返回`true`。如果要比较`undefined`和`null`，可以采用`typeof`方式或者`===`方式进行比较
+
   ```javascript
   var box;
   var car = null;
