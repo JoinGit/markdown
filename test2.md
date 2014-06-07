@@ -33,7 +33,7 @@ alert('不会被执行！！！');
 
 [[Back To Top]](#jump-to-section)
 
-**typeof*(expression)***
+**typeof(expression)**
 
 - 操作符返回一个字符串，括号是可有可无的
 
@@ -150,3 +150,5 @@ alert('不会被执行！！！');
   alert(typeof box == typeof car); // false
   alert(box === car); // false
   ```
+
+**Boolean类型**
