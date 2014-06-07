@@ -100,9 +100,7 @@ alert('不会被执行！！！');
 - 首字母大写的`Undefined`表示的是一种数据类型，小写的`undefined`表示的是属于这种数据类型的唯一的一个值
 - 一个未初始化的变量的值为`undefined`，一个没有传入实参的形参变量的值为`undefined`，如果一个函数什么都不返回，则该函数默认返回`undefined`
 - 一个值未定义的顶层属性；`undefined`同时也是原始值
-
 - 使用严格相等运算符来判断一个值是否是`undefined`
-
  ```javascript
  var x;
  if (x === undefined) {
@@ -118,7 +116,6 @@ alert('不会被执行！！！');
  ```
 
 - 另外还可以使用`typeof`来判断
-
  ```javascript
  var x;
  if (typeof x === 'undefined') {
@@ -140,15 +137,15 @@ alert('不会被执行！！！');
 
 **Null类型**
 
- - `Null`类型是一个只有一个值的数据类型，即特殊的值`null`。它表示一个空对象引用(指针)，而`typeof null`会返回`object`
- - 一个特殊的用于表示空值的关键字；同时`null`也是一个原始(`primitive`)值
- - `undefined`是派生自`null`的，因此`undefined == null`返回`true`。如果要比较`undefined`和`null`，可以采用`typeof`方式或者`===`方式进行比较
+- `Null`类型是一个只有一个值的数据类型，即特殊的值`null`。它表示一个空对象引用(指针)，而`typeof null`会返回`object`
+- 一个特殊的用于表示空值的关键字；同时`null`也是一个原始(`primitive`)值
+- `undefined`是派生自`null`的，因此`undefined == null`返回`true`。如果要比较`undefined`和`null`，可以采用`typeof`方式或者`===`方式进行比较
 
-  ```javascript
-  var box;
-  var car = null;
-  alert(typeof box == typeof car); // false
-  alert(box === car); // false
-  ```
+ ```javascript
+ var box;
+ var car = null;
+ alert(typeof box == typeof car); // false
+ alert(box === car); // false
+ ```
 
 **Boolean类型**
