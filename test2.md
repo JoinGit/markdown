@@ -27,19 +27,20 @@ alert('不会被执行！！！');
  - 第一字符必须是字母、下划线`_`、美元符号`$`。
  - 其他字符可以是字母、下划线`_`、美元符号`$`或数字。
  - 不能把关键字、保留字作为标识符。
+ - `JavaScript`区分大小写。
 
 ## 运算符
 
 [[Back To Top]](#jump-to-section)
 
-**typeof(*expression*)**
+**typeof*(expression)***
 
 - 操作符返回一个字符串，括号是可有可无的
 
  | 操作数类型    | 返回值        |
  | ------------- |:-------------:|
- | undefined     | "undefined"   |
- | Null          | "object"      |
+ | Undefined     | "undefined"   |
+ | null          | "object"      |
  | Boolean       | "boolean"     |
  | String        | "string"      |
  | Number        | "number"      |
@@ -93,3 +94,23 @@ alert('不会被执行！！！');
 ## 数据类型
 
 [[Back To Top]](#jump-to-section)
+
+**Undefined类型**
+
+- 首字母大写的`Undefined`表示的是一种数据类型，小写的`undefined`表示的是属于这种数据类型的唯一的一个值
+- 一个未初始化的变量的值为`undefined`，一个没有传入实参的形参变量的值为`undefined`，如果一个函数什么都不返回，则该函数默认返回`undefined`
+- 一个值未定义的顶层属性；`undefined`同时也是原始值
+- 使用严格相等运算符来判断一个值是否是`undefined`
+
+ ```javascript
+ var x;
+ if (x === undefined) {
+    // 执行到这里
+ }
+ else {
+    // 不会执行到这里
+ }
+ ```
+ ```
+ 注: 这里必须使用严格相等运算符===，而不能使用普通的相等运算符==，因为x == undefined成立还可能是因为x为null，在JavaScript中null== undefined是返回true的
+ ```
