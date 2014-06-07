@@ -110,7 +110,6 @@ alert('不会被执行！！！');
  else {
     // 不会执行到这里
  }
- ```
- ```
- 注: 这里必须使用严格相等运算符===，而不能使用普通的相等运算符==，因为x == undefined成立还可能是因为x为null，在JavaScript中null== undefined是返回true的
+ <!-- 注: 这里必须使用严格相等运算符===，而不能使用普通的相等运算符==，
+ 因为x == undefined成立还可能是因为x为null，在JavaScript中null== undefined是返回true的 -->
  ```
