@@ -2,7 +2,7 @@
 
 如果想输出一个`</script>`字符串，需要把字符串分成多个部分，通过连接符`+`来连接，否则浏览器会误解成`JavaScript`代码已经结束了。**注意在单独的`*.js`文件中不需要这样处理。**
 
-```javascript
+```
 <script type="text/javascript">
 alert('</scr'+'ipt>');
 </script>
@@ -10,7 +10,7 @@ alert('</scr'+'ipt>');
 
 使用`src`引用外部`*.js`文件的时候必须使用`</script>`，不能是`/>`结尾。在`script`之间添加的任何`JavaScript`代码都不会被执行。
 
-```javascript
+```
 <script type="text/javascript" src="xxx.js"></script> //正确引用
 <script type="text/javascript" src="xxx.js"/> //错误引用
 <script type="text/javascript" src="xxx.js">
@@ -23,9 +23,9 @@ alert('不会被执行！！！');
 [[Back To Top]](#jump-to-section)
 
 标识符用来对变量、函数、属性等进行命名。标识符命名规则如下：
-  - 第一字符必须是字母、下划线`_`、美元符号`$`。
-  - 其他字符可以是字母、下划线`_`、美元符号`$`或数字。
-  - 不能把关键字、保留字作为标识符。
+ - 第一字符必须是字母、下划线`_`、美元符号`$`。
+ - 其他字符可以是字母、下划线`_`、美元符号`$`或数字。
+ - 不能把关键字、保留字作为标识符。
 
 ## 运算符
 
