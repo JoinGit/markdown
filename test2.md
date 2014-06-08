@@ -228,7 +228,7 @@ alert('不会被执行！！！');
 
 **比较运算符**
 
-关系运算符：`==, !=, ===, !==, >, >=, <, <=`
+比较运算符：`==, !=, ===, !==, >, >=, <, <=`
 
 - `==`：等于只比较值，会为了比较两个值而进行强制类型转换
 
@@ -256,6 +256,52 @@ alert('不会被执行！！！');
  false        ===   null          // false
  null         ===   undefined     // false
  " \t "       ===   0             // false
+ ```
+
+***
+
+**逻辑运算符**
+
+- `&&`：逻辑与
+ - 如果两个操作数都为boolean类型，则返回值为boolean类型
+ - 如果第一个操作数的转换结果为false，则返回第一个操作数
+ - 如果第一个操作数的转换结果为true，则返回第二个操作数
+
+ ```
+ a1=true && true       // t && t returns true
+ a2=true && false      // t && f returns false
+ a3=false && true      // f && t returns false
+ a4=false && (3 == 4)  // f && f returns false
+ a5="Cat" && "Dog"     // t && t returns Dog
+ a6=false && "Cat"     // f && t returns false
+ a7="Cat" && false     // t && f returns false
+ (5 > 4) && null;      // t && null returns null
+ (3 > 4) && null;      // f && null returns false
+ (5 > 4) && undefined;      // t && undefined returns undefined
+ (3 > 4) && undefined;      // f && undefined returns false
+ ```
+
+- `||`：逻辑或
+ - 如果两个操作数都为boolean类型，则返回值为boolean类型
+ - 如果第一个操作数的转换结果为true，则返回第一个操作数
+ - 如果第一个操作数的转换结果为false，则返回第二个操作数
+
+ ```
+ o1=true || true       // t || t returns true
+ o2=false || true      // f || t returns true
+ o3=true || false      // t || f returns true
+ o4=false || (3 == 4)  // f || f returns false
+ o5="Cat" || "Dog"     // t || t returns Cat
+ o6=false || "Cat"     // f || t returns Cat
+ o7="Cat" || false     // t || f returns Cat
+ ```
+
+- `!`：逻辑非，先将这个值转换成布尔值，然后取反
+
+ ```
+ n1=!true              // !t returns false
+ n2=!false             // !f returns true
+ n3=!"Cat"             // !t returns false
  ```
 
 ## 数据类型
