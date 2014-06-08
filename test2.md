@@ -50,7 +50,7 @@ alert('不会被执行！！！');
 
 - 用法
 
- ```javascript
+ ```
  // Numbers
  typeof 37 === 'number';
  typeof 3.14 === 'number';
@@ -101,7 +101,7 @@ alert('不会被执行！！！');
 - 一个未初始化的变量的值为`undefined`，一个没有传入实参的形参变量的值为`undefined`，如果一个函数什么都不返回，则该函数默认返回`undefined`
 - 一个值未定义的顶层属性；`undefined`同时也是原始值
 - 使用严格相等运算符来判断一个值是否是`undefined`
- ```javascript
+ ```
  var x;
  if (x === undefined) {
     // 执行到这里
@@ -116,7 +116,7 @@ alert('不会被执行！！！');
  ```
 
 - 另外还可以使用`typeof`来判断
- ```javascript
+ ```
  var x;
  if (typeof x === 'undefined') {
     // 执行到这里
@@ -124,7 +124,7 @@ alert('不会被执行！！！');
  ```
 
 - 有时必须使用`typeof`的原因是，如果一个变量根本没有被声明，只有使用`typeof`判断才不会报错，用相等运算符判断会抛出异常
- ```javascript
+ ```
  // x没有被声明过
  if (typeof x === 'undefined') { // 不会报错
     // these statements execute
@@ -142,7 +142,7 @@ alert('不会被执行！！！');
 - `undefined`是派生自`null`的，因此`undefined == null`返回`true`
 - 如果要比较`undefined`和`null`，可以采用`typeof`方式或者`===`方式进行比较
 
- ```javascript
+ ```
  var box;
  var car = null;
  alert(typeof box == typeof car); // false
@@ -156,7 +156,7 @@ alert('不会被执行！！！');
 - 不要将原始值`true/false`，和值为`true/false`的`Boolean`对象相混淆
 - `0`、`-0`、`null`、`false`、`NaN`、`undefined`、空字符串`""`生成的`Boolean`对象的值为`false`；其他任何值，包括任何对象或者字符串`"false"`，都会创建一个值为`true`的`Boolean`对象
 - 任何值为`undefined`或者`null`的对象，包括值为`false`的`Boolean`对象，在条件语句中，其值都将作为`true`来判断。例如，下面的条件语句中，`if`就将对象`x`看作是`true`：
- ```javascript
+ ```
  x = new Boolean(false);
  if (x) {
    // . . . 这里的代码仍会被执行
@@ -164,7 +164,7 @@ alert('不会被执行！！！');
  ```
 
 - `Boolean`原始值不会有这种表现。例如，下面的条件结构中，`if`语句的内部代码不会被执行：
- ```javascript
+ ```
  x = false;
  if (x) {
    // . . . 这里的代码不会被执行
@@ -172,13 +172,13 @@ alert('不会被执行！！！');
  ```
 
 - 不要通过新建`Boolean`对象的方法来将一个非布尔值转化成布尔值，直接使用`Boolean()`函数才是正确的：
- ```javascript
+ ```
  x = Boolean(expression);     // 这样用
  x = new Boolean(expression); // 而不要这样!
  ```
 
 - 如过你用一个对象作为`Boolean`对象的初始化值，则即使该对象是个值为`false`的`Boolean`对象，生成的`Boolean`对象的值也是`true`
- ```javascript
+ ```
  myFalse = new Boolean(false);   // 初始化值为false
  g = new Boolean(myFalse);       // 初始化值为true
  myString = new String("Hello"); // string 对象
@@ -192,7 +192,7 @@ alert('不会被执行！！！');
 - 语法`new Number(value)`，如果参数`value`无法被转换为数字，则返回`NaN`
 - `Number()`函数用来执行类型转换
 - `Number`类型包含两种数值：整型和浮点型
- ```javascript
+ ```
  // 最常用的十进制整型
  var box = 100;
 
@@ -227,14 +227,14 @@ alert('不会被执行！！！');
 - `-Number.MIN_VALUE` 最小的负数
 - 如果超过了数值范围的最大值或最小值，那么就会变成正无穷`Infinity`或者负无穷`-Infinity`。要想确定一个数值到底是否超过了规定范围，可以使用`isFinite()`函数。如果没有超过，返回`true`，超过了返回`false`
 
- ```javascript
+ ```
  alert(Number.POSITIVE_INFINITY); // Infinity(正无穷)
  alert(Number.NEGATIVE_INFINITY); // -Infinity(负无穷)
  ```
 
 - `Number.NaN`，即非数值（Not a Number）是一个特殊的值。任何与`NaN`进行运算的结果均为`NaN`，`NaN`不与任何值相等（包括自身不相等）
 
- ```javascript
+ ```
  var box = 0 / 0; // NaN
  var box = 12 / 0; // Infinity
  var box = 12 / 0 * 0; // NaN
@@ -247,7 +247,7 @@ alert('不会被执行！！！');
 
 - `Number.isNaN()`函数，用来判断值是不是`NaN`
 
- ```javascript
+ ```
  alert(isNaN(NaN)); // true
  alert(isNaN(25)); // false，25 是一个数值
  alert(isNaN('25')); // false，'25'是一个字符串数值，可以转成数值
@@ -258,7 +258,7 @@ alert('不会被执行！！！');
 
 - 类型转换：`Number()`、`Number.parseInt()`和`Number.parseFloat()`。`Number()`函数是转型函数，可以用于任何数据类型，而另外两个则专门用于把字符串转成数值
 
- ```javascript
+ ```
  alert(Number(true)); // 1，Boolean 类型的true 和false 分别转换成1 和0
  alert(Number(25)); // 25，数值型直接返回
  alert(Number(null)); // 0，空对象返回0
@@ -280,7 +280,7 @@ alert('不会被执行！！！');
  };
  alert(Number(box)); // 123
  ```
- ```javascript
+ ```
  // parseInt()从第一位解析到非整型数值位置。
  alert(parseInt('456Lee')); // 456，会返回整数部分
  alert(parseInt('Lee456Lee')); // NaN，如果第一个不是数值，就返回NaN
@@ -295,7 +295,7 @@ alert('不会被执行！！！');
  alert(parseInt('101010101',2)); // 341，二进制转换
  alert(parseInt('70',8)) // 56，八进制转换
  ```
- ```javascript
+ ```
  // parseFloat()是用于浮点数值转换的，和parseInt()一样，从第一位解析到非浮点数值位置。
  alert(parseFloat('123Lee')); // 123，去掉不是别的部分
  alert(parseFloat('0xA')); // 0，不认十六进制
@@ -308,7 +308,7 @@ alert('不会被执行！！！');
 
 - 语法
 
- ```javascript
+ ```
  var str1 = 'string text';
  var str2 = "string text";
  var str3 = String("string text"); // 使用String()函数
@@ -332,7 +332,7 @@ alert('不会被执行！！！');
 
 - 语法`new Object( [ value ] )`，如果给定值是`null`或`undefined`，它生成并返回一个空对象，否则它将返回一个与给定值对应类型的对象
 
- ```javascript
+ ```
  // 定义空的Object对象
  var o1 = new Object();
  var o2 = new Object(undefined);
