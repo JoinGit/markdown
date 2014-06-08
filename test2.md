@@ -226,6 +226,38 @@ alert('不会被执行！！！');
 
 ***
 
+**比较运算符**
+
+关系运算符：`==, !=, ===, !==, >, >=, <, <=`
+
+- `==`：等于只比较值，会为了比较两个值而进行强制类型转换
+
+ ```
+ ""           ==   "0"           // false
+ 0            ==   ""            // true
+ 0            ==   "0"           // true
+ false        ==   "false"       // false
+ false        ==   "0"           // true
+ false        ==   undefined     // false
+ false        ==   null          // false
+ null         ==   undefined     // true
+ " \t "       ==   0             // true
+ ```
+
+- `===`：恒等于不仅比较值，而且还比较值的类型，不会进行强制类型转换
+
+ ```
+ ""           ===   "0"           // false
+ 0            ===   ""            // false
+ 0            ===   "0"           // false
+ false        ===   "false"       // false
+ false        ===   "0"           // false
+ false        ===   undefined     // false
+ false        ===   null          // false
+ null         ===   undefined     // false
+ " \t "       ===   0             // false
+ ```
+
 ## 数据类型
 
 [[Back To Top]](#jump-to-section)
