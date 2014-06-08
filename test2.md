@@ -220,6 +220,8 @@ alert('不会被执行！！！');
  +null  // 0
  ```
 
+***
+
 ## 数据类型
 
 [[Back To Top]](#jump-to-section)
