@@ -150,3 +150,193 @@ alert('不会被执行！！！');
  ```
 
 **Boolean类型**
+
+- 语法`new Boolean(value)`
+- `Boolean`类型有两个值：`true`和`false`
+- 不要将原始值`true/false`，和值为`true/false`的`Boolean`对象相混淆
+- `0`、`-0`、`null`、`false`、`NaN`、`undefined`、空字符串`""`生成的`Boolean`对象的值为`false`；其他任何值，包括任何对象或者字符串`"false"`，都会创建一个值为`true`的`Boolean`对象
+- 任何值为`undefined`或者`null`的对象，包括值为`false`的`Boolean`对象，在条件语句中，其值都将作为`true`来判断。例如，下面的条件语句中，`if`就将对象`x`看作是`true`：
+ ```javascript
+ x = new Boolean(false);
+ if (x) {
+   // . . . 这里的代码仍会被执行
+ }
+ ```
+
+- `Boolean`原始值不会有这种表现。例如，下面的条件结构中，`if`语句的内部代码不会被执行：
+ ```javascript
+ x = false;
+ if (x) {
+   // . . . 这里的代码不会被执行
+ }
+ ```
+
+- 不要通过新建`Boolean`对象的方法来将一个非布尔值转化成布尔值，直接使用`Boolean()`函数才是正确的：
+ ```javascript
+ x = Boolean(expression);     // 这样用
+ x = new Boolean(expression); // 而不要这样!
+ ```
+
+- 如过你用一个对象作为`Boolean`对象的初始化值，则即使该对象是个值为`false`的`Boolean`对象，生成的`Boolean`对象的值也是`true`
+ ```javascript
+ myFalse = new Boolean(false);   // 初始化值为false
+ g = new Boolean(myFalse);       // 初始化值为true
+ myString = new String("Hello"); // string 对象
+ s = new Boolean(myString);      // 初始化值为true
+ ```
+
+- 总而言之不要在该使用`Boolean`原始值的地方使用`Boolean`对象
+
+**Number类型**
+
+- 语法`new Number(value)`，如果参数`value`无法被转换为数字，则返回`NaN`
+- `Number()`函数用来执行类型转换
+- `Number`类型包含两种数值：整型和浮点型
+ ```javascript
+ // 最常用的十进制整型
+ var box = 100;
+
+ // 八进制整型，以8为基数，第一位必须是0，八进制序列(0~7)
+ var box = 070; // 八进制，56
+ var box = 079; // 无效的八进制，自动解析为79
+ var box = 08; // 无效的八进制，自动解析为8
+
+ // 十六进制整型，前面两位必须是0x，后面是0~9及A~F
+ var box = 0xA; // 十六进制，10
+ var box = 0x1f; // 十六进制，31
+
+ // 浮点类型，就是该数值中必须包含一个小数点，并且小数点后面必须至少有一位数字
+ var box = 3.8;
+ var box = 0.8;
+ var box = .8; // 有效，但不推荐此写法
+
+ // 由于保存浮点数值需要的内存空间比整型数值大两倍，因此会自动将可以转换为整型的浮点数值转成为整型
+ var box = 8.; // 小数点后面没有值，转换为8
+ var box = 12.0; // 小数点后面是0，转成为12
+
+ // 对于那些过大或过小的数值，可以用科学技术法来表示(e表示法)。用e表示该数值的前面10的指数次幂
+ var box = 4.12e9; // 即4120000000
+ var box = 0.00000000412; // 即4.12e-9
+
+ // 虽然浮点数值的最高精度是17位小数，但算术运算中可能会不精确（解决方法：先扩大为整数，运算之后再除以倍数）。
+ alert(0.1+0.2); // 0.30000000000000004
+ ```
+- `Number.MAX_VALUE` 最大正数。
+- `Number.MIN_VALUE` 最小正数，即最接近`0`的正数（实际上不会变成`0`）
+- `-Number.MAX_VALUE` 最大的负数
+- `-Number.MIN_VALUE` 最小的负数
+- 如果超过了数值范围的最大值或最小值，那么就会变成正无穷`Infinity`或者负无穷`-Infinity`。要想确定一个数值到底是否超过了规定范围，可以使用`isFinite()`函数。如果没有超过，返回`true`，超过了返回`false`
+
+ ```javascript
+ alert(Number.POSITIVE_INFINITY); // Infinity(正无穷)
+ alert(Number.NEGATIVE_INFINITY); // -Infinity(负无穷)
+ ```
+
+- `Number.NaN`，即非数值（Not a Number）是一个特殊的值。任何与`NaN`进行运算的结果均为`NaN`，`NaN`不与任何值相等（包括自身不相等）
+
+ ```javascript
+ var box = 0 / 0; // NaN
+ var box = 12 / 0; // Infinity
+ var box = 12 / 0 * 0; // NaN
+
+ alert(Number.NaN); // NaN
+ alert(NaN+1); // NaN
+ alert(NaN == NaN) // false
+ alert(NaN === NaN) // false
+ ```
+
+- `Number.isNaN()`函数，用来判断值是不是`NaN`
+
+ ```javascript
+ alert(isNaN(NaN)); // true
+ alert(isNaN(25)); // false，25 是一个数值
+ alert(isNaN('25')); // false，'25'是一个字符串数值，可以转成数值
+ alert(isNaN('Lee')); // true，'Lee'不能转换为数值
+ alert(isNaN(true)); // false，true可以转成成1
+ alert(isNaN(false)); // false，false可以转成成0
+ ```
+
+- 类型转换：`Number()`、`Number.parseInt()`和`Number.parseFloat()`。`Number()`函数是转型函数，可以用于任何数据类型，而另外两个则专门用于把字符串转成数值
+
+ ```javascript
+ alert(Number(true)); // 1，Boolean 类型的true 和false 分别转换成1 和0
+ alert(Number(25)); // 25，数值型直接返回
+ alert(Number(null)); // 0，空对象返回0
+ alert(Number(undefined)); // NaN，undefined 返回NaN
+
+ // 字符串
+ alert(Number('456')); // 456 整型
+ alert(Number('070')); // 70 整型，去掉前面的0，如果这是八进制的数字转换后数值将会不正确
+ alert(Number('08.90')); // 8.9 浮点数
+ alert(Number('')); // 0 如果字符串是空，那么直接转换成0
+ alert(Number('blabla') // NaN 如果是其它字符串类型，则返回NaN
+
+ /* 如果是对象，首先会调用valueOf()方法，然后确定返回值是否能够转换成数值。
+ 如果转换的结果是NaN，则基于这个返回值再调用toString()方法，再测试返回值。*/
+ var box = {
+  toString : function () {
+   return '123';
+  }
+ };
+ alert(Number(box)); // 123
+ ```
+ ```javascript
+ // parseInt()从第一位解析到非整型数值位置。
+ alert(parseInt('456Lee')); // 456，会返回整数部分
+ alert(parseInt('Lee456Lee')); // NaN，如果第一个不是数值，就返回NaN
+ alert(parseInt('12Lee56Lee')); // 12，从第一数值开始取，到最后一个连续数值结束
+ alert(parseInt('56.12')); // 56，小数点不是数值，会被去掉
+ alert(parseInt('')); // NaN，空返回NaN
+
+ // ECMAScript为parseInt()提供了第二个参数，用于解决各种进制的转换。
+ alert(parseInt('0xAF')); // 175，十六进制
+ alert(parseInt('AF',16)); // 175，第二参数指定十六进制，可以去掉0x前缀
+ alert(parseInt('AF')); // NaN，理所当然
+ alert(parseInt('101010101',2)); // 341，二进制转换
+ alert(parseInt('70',8)) // 56，八进制转换
+ ```
+ ```javascript
+ // parseFloat()是用于浮点数值转换的，和parseInt()一样，从第一位解析到非浮点数值位置。
+ alert(parseFloat('123Lee')); // 123，去掉不是别的部分
+ alert(parseFloat('0xA')); // 0，不认十六进制
+ alert(parseFloat('123.4.5')); // 123.4，只认一个小数点
+ alert(parseFloat('0123.400')); // 123.4，去掉前面的0
+ alert(parseFloat('1.234e7')); // 12340000，把科学技术法转成普通数值
+ ```
+
+**String类型**
+
+- 语法
+
+ ```javascript
+ var str1 = 'string text';
+ var str2 = "string text";
+ var str3 = String("string text"); // 使用String()函数
+ var str4 = new String("string text"); // 使用String对象来构造字符串
+ ```
+
+- 转义字符
+
+ ```
+ \n 换行
+ \t 制表
+ \b 空格
+ \r 回车
+ \f 换页
+ \\ 斜杠
+ \' 单引号
+ \" 双引号
+ ```
+
+**Object类型**
+
+- 语法`new Object( [ value ] )`，如果给定值是`null`或`undefined`，它生成并返回一个空对象，否则它将返回一个与给定值对应类型的对象
+
+ ```javascript
+ // 定义空的Object对象
+ var o1 = new Object();
+ var o2 = new Object(undefined);
+ var o3 = new Object(null);
+ ```
+
+- `JavaScript`语言的所有对象都是由`Object`衍生的对象；所有对象都继承了`Object.prototype`的方法和属性，尽管它们可能被覆盖。原型对象的更改会传播给所有的对象，除非这些属性和方法受到了原型链中那些进一步的变化的覆盖。
