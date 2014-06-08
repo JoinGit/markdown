@@ -33,11 +33,12 @@ alert('不会被执行！！！');
 
 [[Back To Top]](#jump-to-section)
 
-**typeof(expression)**
-
+**typeof**
+- 语法`typeof [(] expression [)]`
 - 操作符返回一个字符串，括号是可有可无的
 
- | 操作数类型    | 返回值        |
+ ```
+ | Type          | Result        |
  | ------------- |:-------------:|
  | Undefined     | "undefined"   |
  | null          | "object"      |
@@ -47,6 +48,7 @@ alert('不会被执行！！！');
  | Object        | "object"      |
  | Array         | "object"      |
  | Function      | "function"    |
+ ```
 
 - 用法
 
