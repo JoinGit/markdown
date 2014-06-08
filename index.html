@@ -3,81 +3,772 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
     <title>Markdown by JoinGit</title>
   </head>
 
   <body>
-    <header>
+    <div id="container">
       <div class="inner">
-        <h1>Markdown</h1>
-        <h2>markdown test</h2>
-        <a href="https://github.com/JoinGit/markdown" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <header>
+          <h1>Markdown</h1>
+          <h2>markdown test</h2>
+        </header>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/JoinGit/markdown/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/JoinGit/markdown/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/JoinGit/markdown" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/JoinGit/markdown/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/JoinGit/markdown/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+        <hr>
 
-          <p class="repo-owner"><a href="https://github.com/JoinGit/markdown"></a> is maintained by <a href="https://github.com/JoinGit">JoinGit</a>.</p>
+        <section id="main_content">
+          <h2>
+<a name="jump-to-section" class="anchor" href="#jump-to-section"><span class="octicon octicon-link"></span></a>Jump to Section</h2>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
+<ul>
+<li><a href="#python%E6%B3%A8%E6%84%8F%E7%82%B9">Python注意点</a></li>
+<li><a href="#python%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B">Python文件类型</a></li>
+<li><a href="#python%E5%8F%98%E9%87%8F">Python变量</a></li>
+<li><a href="#python%E8%BF%90%E7%AE%97%E7%AC%A6">Python运算符</a></li>
+<li><a href="#python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">Python数据类型</a></li>
+<li><a href="#python%E5%BA%8F%E5%88%97">Python序列</a></li>
+<li><a href="#python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6">Python流程控制</a></li>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul><h2>
+<a name="python%E6%B3%A8%E6%84%8F%E7%82%B9" class="anchor" href="#python%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="octicon octicon-link"></span></a>Python注意点</h2>
+
+<p><a href="#jump-to-section">[Back To Top]</a></p>
+
+<ul>
+<li>
+<code>Python</code>中，表示方法比较特殊，是用相同缩进的一条或多条语句来表示的，建议使用4个空格作为缩进</li>
+</ul><h2>
+<a name="python%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B" class="anchor" href="#python%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="octicon octicon-link"></span></a>Python文件类型</h2>
+
+<p><a href="#jump-to-section">[Back To Top]</a></p>
+
+<ul>
+<li>源代码
+
+<ul>
+<li>Python源代码的文件以<code>*.py</code>为扩展名，由<code>python</code>命令解释执行，不需要编译
+<pre>
+$ cat hello.py
+print 'hello world'
+$ python hello.py
+hello world
+</pre>
+</li>
+<li>在<code>linux</code>中文件头部分添加如下代码，并附加可执行权限，就能够直接执行
+<pre>
+$ cat hello.py
+#!/c/Python27/python
+print 'hello world'
+$ chmod +x hello.py
+$ hello.py
+hello world
+</pre>
+</li>
+</ul>
+</li>
+<li>字节代码
+
+<ul>
+<li>Python源文件经编译后生成的扩展名为<code>*.pyc</code>的文件，需要用<code>python</code>命令执行</li>
+<li>编译方法
+<pre>
+$ ls
+hello.py  world.py
+$ cat world.py
+import py_compile
+py_compile.compile("hello.py")
+$ python world.py
+$ ls
+hello.py  hello.pyc  world.py
+$ python hello.pyc
+hello world
+</pre>
+</li>
+</ul>
+</li>
+<li>优化代码
+
+<ul>
+<li>经过优化后的源文件，扩展名为<code>*.pyo</code>，需要用<code>python</code>命令执行</li>
+<li>执行方法，注意参数是大写的<code>O</code>
+<pre>
+$ python -O -m py_compile hello.py
+$ ls
+hello.py  hello.pyo
+$ python hello.pyo
+hello world
+</pre>
+</li>
+</ul>
+</li>
+</ul><h2>
+<a name="python%E5%8F%98%E9%87%8F" class="anchor" href="#python%E5%8F%98%E9%87%8F"><span class="octicon octicon-link"></span></a>Python变量</h2>
+
+<p><a href="#jump-to-section">[Back To Top]</a></p>
+
+<p><strong>变量是计算机内存中的一块区域，变量可以存储规定范围内的值，而且值可以改变。</strong></p>
+
+<ul>
+<li>变量的命名
+
+<ul>
+<li>变量名由字母、数字、下划线组成</li>
+<li>不能以数字开头</li>
+<li>不可以使用关键字</li>
+</ul>
+</li>
+<li>变量的赋值
+
+<ul>
+<li>变量声明和使用</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">a</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">=</span><span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">+</span><span class="mi">3</span>
+<span class="mi">13</span>
+</pre></div>
+
+<ul>
+<li>查看变量内存空间地址<code>id(VarName)</code>，同一内存空间地址可以被多个变量所使用</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="mi">5090592</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="mi">5090484</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="mi">5090484</span>
+</pre></div>
+</li>
+</ul><h2>
+<a name="python%E8%BF%90%E7%AE%97%E7%AC%A6" class="anchor" href="#python%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="octicon octicon-link"></span></a>Python运算符</h2>
+
+<p><a href="#jump-to-section">[Back To Top]</a></p>
+
+<ul>
+<li>算术运算符
+
+<ul>
+<li>加法：<code>+</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
+<span class="mi">5</span>
+</pre></div>
+
+<ul>
+<li>减法：<code>-</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span><span class="o">-</span><span class="mi">4</span>
+<span class="mi">1</span>
+</pre></div>
+
+<ul>
+<li>乘法：<code>*</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">2</span>
+<span class="mi">6</span>
+</pre></div>
+
+<ul>
+<li>实数除法：<code>/</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">3.0</span><span class="o">/</span><span class="mi">2</span>
+<span class="mf">1.5</span>
+</pre></div>
+
+<ul>
+<li>整数除法：<code>//</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">3</span><span class="o">//</span><span class="mi">2</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">3.0</span><span class="o">//</span><span class="mi">2</span>
+<span class="mf">1.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">3.2</span><span class="o">//</span><span class="mi">2</span>
+<span class="mf">1.0</span>
+</pre></div>
+
+<ul>
+<li>求余数：<code>%</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span><span class="o">%</span><span class="mi">3</span>
+<span class="mi">1</span>
+</pre></div>
+
+<ul>
+<li>幂运算：<code>**</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
+<span class="mi">8</span>
+</pre></div>
+</li>
+<li>关系运算符，返回<code>True/False</code>
+
+<ul>
+<li>小于：<code>1&lt;2</code>
+</li>
+<li>大于：<code>3&gt;2</code>
+</li>
+<li>小于等于：<code>1&lt;=1</code>
+</li>
+<li>大于等于：<code>2&gt;=2</code>
+</li>
+<li>不等于：<code>1!=2</code>
+</li>
+<li>等于：<code>2==2</code>
+</li>
+</ul>
+</li>
+<li>逻辑运算符，返回<code>True/False</code>
+
+<ul>
+<li>逻辑与：<code>3&gt;2 and 2&lt;3</code>
+</li>
+<li>逻辑或：<code>1&gt;2 or 3&gt;2</code>
+</li>
+<li>逻辑非：<code>not 1&gt;2</code>
+</li>
+</ul>
+</li>
+<li>赋值运算符，先用左边的变量和右边的表达式计算，再赋值给左边的变量
+
+<ul>
+<li>等于：<code>=</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="mi">22</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">=</span><span class="s">'xyz'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mi">22</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+<span class="s">'xyz'</span>
+</pre></div>
+
+<ul>
+<li>加等于：<code>+=</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="mi">22</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">+=</span><span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mi">27</span>
+</pre></div>
+
+<ul>
+<li>减等于：<code>-=</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="mi">27</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">-=</span><span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mi">23</span>
+</pre></div>
+
+<ul>
+<li>乘等于：<code>*=</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">*=</span><span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mi">20</span>
+</pre></div>
+
+<ul>
+<li>除等于：<code>/=</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="mi">20</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">/=</span><span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+  <span class="mi">5</span>
+</pre></div>
+
+<ul>
+<li>求余等于：<code>%=</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">%=</span><span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="mi">2</span>
+</pre></div>
+
+<ul>
+<li>算术运算符优先级由低到高顺序
+<pre>
+Lambda
+逻辑或：or
+逻辑与：and
+逻辑非：not
+范围：in, not in
+同一性测试：is, is not
+比较：&lt;, &lt;=, &gt;, &gt;=, !=, ==
+按位或：|
+按位异或：^
+移位：&lt;&lt;, &gt;&gt;
+加法与减法：+, -
+乘法、除法与取余：<code>*, /, %</code>
+正负号：+X, -X
+按位翻转：~X
+幂运算：**
+</pre>
+</li>
+</ul>
+</li>
+</ul><h2>
+<a name="python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B" class="anchor" href="#python%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="octicon octicon-link"></span></a>Python数据类型</h2>
+
+<p><a href="#jump-to-section">[Back To Top]</a></p>
+
+<ul>
+<li>数字类型
+
+<ul>
+<li>整型：<code>int</code>，范围<code>-2,147,483,648~2,147,483,647</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">num</span><span class="o">=</span><span class="mi">21435435</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'int'</span><span class="o">&gt;</span>
+</pre></div>
+
+<ul>
+<li>长整型：<code>long</code>，范围可以是任意大的整数均可以储存，也可以在普通整数后加<code>L</code>或<code>l</code>强制声明。</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">num</span><span class="o">=</span><span class="mi">9999999999999999999</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'long'</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">num</span><span class="o">=</span><span class="il">123L</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'long'</span><span class="o">&gt;</span>
+</pre></div>
+
+<ul>
+<li>浮点型：<code>float</code>，加上<code>.</code>声明即可</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">num</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'float'</span><span class="o">&gt;</span>
+</pre></div>
+
+<ul>
+<li>复数型：<code>complex</code>，加上<code>j</code>声明即可</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">num</span><span class="o">=</span><span class="mf">3.14j</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'complex'</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">num</span>
+<span class="mf">3.14j</span>
+</pre></div>
+</li>
+<li>
+<p>字符串：<code>String</code></p>
+
+<ul>
+<li>一旦生成，不可变</li>
+<li>使用引号定义的一组集合，可以包含数字、字母、符号（非特殊系统符号）</li>
+<li>必要时字符串中可以添加转义符号：<code>\</code>, <code>\n</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">=</span><span class="s">'string'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">=</span><span class="s">"string"</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">=</span><span class="s">"""string"""</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'str'</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="nb">str</span>
+<span class="n">string</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">=</span><span class="s">'let</span><span class="se">\'</span><span class="s">s go'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="nb">str</span>
+<span class="n">let</span><span class="s">'s go</span>
+</pre></div>
+
+<ul>
+<li>三重引号（docstring）通常用来制作字符串</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">=</span><span class="s">"""jay:</span>
+<span class="s">...   How are you?</span>
+<span class="s">...        Gooodbye!</span>
+<span class="s">... """</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span>
+<span class="s">'jay:</span><span class="se">\n</span><span class="s">  How are you?</span><span class="se">\n</span><span class="s">       Gooodbye!</span><span class="se">\n</span><span class="s">'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="nb">str</span>
+<span class="n">jay</span><span class="p">:</span>
+  <span class="n">How</span> <span class="n">are</span> <span class="n">you</span><span class="err">?</span>
+       <span class="n">Gooodbye</span><span class="err">!</span>
+
+</pre></div>
+
+<ul>
+<li>操作字符串：索引、连接、截取</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="o">=</span><span class="s">"12345"</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c">#索引位置从0开始</span>
+<span class="s">'1'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="nb">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c">#使用`+`连接字符串</span>
+<span class="s">'31'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c">#从索引1截取到索引4-1的字符，默认从左向右截取</span>
+<span class="s">'234'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="c">#从索引0开始截取到索引4-1的字符</span>
+<span class="s">'1234'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span> <span class="c">#从索引4开始截取到末尾</span>
+<span class="s">'5'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[::</span><span class="mi">1</span><span class="p">]</span> <span class="c">#从索引0开始每隔1个字符进行截取</span>
+<span class="s">'12345'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="c">#从索引0开始每隔2个字符进行截取</span>
+<span class="s">'135'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span> <span class="c">#从索引0开始每隔3个字符进行截取</span>
+<span class="s">'14'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c">#从右向左索引位置即-1, -2, -3, ...</span>
+<span class="s">'5'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s">'234'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[</span><span class="mi">4</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c">#使用-1从右向左截取，即字符串反转</span>
+<span class="s">'54321'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">[</span><span class="mi">3</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s">'4321'</span>
+</pre></div>
+</li>
+<li>元组（类似于<code>Java</code>中的数组）：<code>tuple</code>
+
+<ul>
+<li>一旦生成，不可以改变</li>
+<li>固定长度，支持嵌套</li>
+<li>通过偏移读取</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">empty</span><span class="o">=</span><span class="p">()</span> <span class="c">#空元组</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">singleton</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,)</span> <span class="c">#单个元素的元组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">singleton2</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c">#这是整数</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">singleton</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'tuple'</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">singleton2</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'int'</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="p">(</span><span class="s">'x'</span><span class="p">,</span><span class="s">'y'</span><span class="p">,</span><span class="s">'z'</span><span class="p">)</span> <span class="c">#一般的元组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="s">'w'</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c">#嵌套元组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">b</span>
+<span class="p">(</span><span class="s">'w'</span><span class="p">,</span> <span class="p">(</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="s">'z'</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c">#取元组中的元素</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">(</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="s">'z'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="c">#取元组中的元素</span>
+<span class="s">'y'</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span><span class="n">c3</span><span class="o">=</span><span class="n">b</span> <span class="c">#同时定义三个变量，并赋值</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">c1</span>
+<span class="n">w</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c2</span>
+<span class="p">(</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="s">'z'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c3</span>
+<span class="mi">1</span>
+</pre></div>
+</li>
+<li>字典：<code>dict</code>
+
+<ul>
+<li><a href="https://docs.python.org/2/library/stdtypes.html#mapping-types-dict">jump to api doc</a></li>
+<li>字典是<code>Python</code>中唯一的映射类型（哈希表）</li>
+<li>字典对象是可变的，但字典的键必须使用不可变对象，并且一个字典中可以使用不同类型的键值</li>
+<li>定义字典的几种方式</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">one</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">two</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">three</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="s">'one'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'two'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'three'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s">'two'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">'one'</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">'three'</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="s">'three'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'one'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'two'</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="o">==</span> <span class="n">c</span> <span class="o">==</span> <span class="n">d</span> <span class="o">==</span> <span class="n">e</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">'dict'</span><span class="o">&gt;</span>
+</pre></div>
+
+<ul>
+<li>
+<code>d.items()</code> 返回所有的键值对</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="p">[(</span><span class="s">'three'</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s">'two'</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">'one'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+
+<ul>
+<li>
+<code>d.keys()</code> 返回键列表</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="p">[</span><span class="s">'three'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'one'</span><span class="p">]</span>
+</pre></div>
+
+<ul>
+<li>
+<code>d.values()</code> 返回值列表</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+<ul>
+<li>
+<code>d[key]</code> 获取<code>key</code>对应的<code>value</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="p">[</span><span class="s">"one"</span><span class="p">]</span>
+<span class="mi">1</span>
+</pre></div>
+
+<ul>
+<li>
+<code>get(key[, default])</code> 获取<code>key</code>的<code>value</code>，如果没有<code>key</code>，则返回<code>default</code>；如果没有<code>default</code>，则没有值也不会报错</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"one"</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"one1"</span><span class="p">,</span><span class="mi">222</span><span class="p">)</span>
+<span class="mi">2</span>
+</pre></div>
+
+<ul>
+<li>
+<code>d[key] = value</code> 设置<code>key</code>的<code>value</code>或者增加一个<code>item</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="s">'one'</span><span class="p">]</span><span class="o">=</span><span class="mi">111</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="s">'one'</span><span class="p">]</span>
+<span class="mi">111</span>
+</pre></div>
+
+<ul>
+<li>
+<code>del d[key]或者del(d[key])</code> 删除<code>key</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="s">"one"</span><span class="p">]</span>
+</pre></div>
+
+<ul>
+<li>
+<code>key in d</code> 是否存在<code>key</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="s">"one"</span> <span class="ow">in</span> <span class="n">a</span>
+<span class="bp">False</span>
+</pre></div>
+
+<ul>
+<li>d.has_key(key) 是否存在<code>key</code>，建议使用<code>key in d</code>代替</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">"one"</span><span class="p">)</span>
+<span class="bp">False</span>
+</pre></div>
+
+<ul>
+<li>
+<code>key not in d</code>是否不存在<code>key</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="s">"one"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">a</span>
+<span class="bp">True</span>
+</pre></div>
+
+<ul>
+<li>
+<code>d.clar()</code> 移除所有的<code>items</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="p">{}</span>
+</pre></div>
+
+<ul>
+<li>
+<code>d.copy()</code> 复制字典</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="p">{</span><span class="s">'one'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'three'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'two'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>
+<code>pop(key[, default])</code> 删除<code>key</code>，并返回<code>value</code>；如果没有<code>key</code>，则返回<code>default</code>，如果<code>default</code>没有，则会报错</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">"one"</span><span class="p">,</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">"one"</span><span class="p">,</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">111</span>
+</pre></div>
+</li>
+</ul><h2>
+<a name="python%E5%BA%8F%E5%88%97" class="anchor" href="#python%E5%BA%8F%E5%88%97"><span class="octicon octicon-link"></span></a>Python序列</h2>
+
+<p><a href="#jump-to-section">[Back To Top]</a></p>
+
+<p><strong>列表、元组和字符串都是序列</strong></p>
+
+<ul>
+<li>
+<p>序列的两个主要特点是索引操作符和切片符</p>
+
+<ul>
+<li>索引操作符可以从序列中抓取一个特定范围的值</li>
+<li>切片操作符可以截取序列的一部分元素</li>
+</ul>
+</li>
+<li>
+<p>序列的基本操作</p>
+
+<ul>
+<li>求序列长度：<code>len()</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+<span class="mi">3</span>
+</pre></div>
+
+<ul>
+<li>连接2个序列：<code>+</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="s">'abc'</span><span class="o">+</span><span class="s">'123'</span>
+<span class="s">'abc123'</span>
+</pre></div>
+
+<ul>
+<li>重复序列元素：<code>*</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="s">'#'</span><span class="o">*</span><span class="mi">3</span>
+<span class="s">'###'</span>
+</pre></div>
+
+<ul>
+<li>判断元素是否在序列中：<code>in</code>
+</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="s">'c'</span> <span class="ow">in</span> <span class="s">'abc'</span>
+<span class="s">'True'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">'d'</span> <span class="ow">in</span> <span class="s">'abc'</span>
+<span class="s">'False'</span>
+</pre></div>
+
+<ul>
+<li>取最大/小值：<code>max()</code>, <code>min()</code>，不能单独操作数字</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="o">&gt;&gt;&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+<span class="s">'c'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="mi">12345679</span><span class="p">,</span><span class="mi">1234</span><span class="p">)</span>
+<span class="mi">12345679</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="s">'189'</span><span class="p">)</span>
+<span class="s">'9'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">min</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">33</span><span class="p">)</span>
+<span class="mi">11</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">min</span><span class="p">(</span><span class="s">'abc'</span><span class="p">)</span>
+<span class="s">'a'</span>
+</pre></div>
+</li>
+</ul><h2>
+<a name="python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6" class="anchor" href="#python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="octicon octicon-link"></span></a>Python流程控制</h2>
+
+<p><a href="#jump-to-section">[Back To Top]</a></p>
+
+<ul>
+<li>逻辑运算符：<code>and/or/not</code>
+
+<ul>
+<li>类似于<code>Java</code>中的<code>and/or/!</code>
+</li>
+</ul>
+</li>
+<li>
+<code>if/elif/else</code>
+
+<ul>
+<li><a href="https://docs.python.org/2/reference/compound_stmts.html#the-if-statement">jump to api doc</a></li>
+<li>语法格式</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="k">if</span> <span class="n">expression</span><span class="p">:</span>
+    <span class="n">suite</span>
+<span class="n">elsif</span> <span class="n">expression</span><span class="p">:</span>
+    <span class="n">suite</span>
+<span class="k">else</span>
+    <span class="n">suite</span>
+</pre></div>
+
+<ul>
+<li>示例</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="k">if</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">"hello"</span>
+    <span class="k">print</span> <span class="s">"world"</span>
+<span class="k">elif</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">"2 &gt; 3"</span>
+<span class="k">elif</span> <span class="ow">not</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">"3 &gt; 2"</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">"else"</span>
+</pre></div>
+</li>
+<li>
+<code>for</code>
+
+<ul>
+<li><a href="https://docs.python.org/2/reference/compound_stmts.html#the-for-statement">jump to api doc</a></li>
+<li>语法格式</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="k">for</span> <span class="n">target_list</span> <span class="ow">in</span> <span class="n">expression_list</span> <span class="p">:</span>
+  <span class="n">suite</span>
+<span class="k">else</span>
+  <span class="n">suite</span>
+</pre></div>
+
+<ul>
+<li>示例</li>
+</ul>
+<div class="highlight highlight-python"><pre><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s">'Python'</span><span class="p">:</span>
+  <span class="k">print</span> <span class="s">'Current Letter:'</span><span class="p">,</span> <span class="n">letter</span>
+<span class="n">fruits</span><span class="o">=</span><span class="p">[</span><span class="s">'banana'</span><span class="p">,</span><span class="s">'apple'</span><span class="p">,</span><span class="s">'mango'</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+  <span class="k">print</span> <span class="s">'Current fruit:'</span><span class="p">,</span> <span class="n">fruit</span>
+</pre></div>
+</li>
+</ul>
+        </section>
+
+        <footer>
+          Markdown is maintained by <a href="https://github.com/JoinGit">JoinGit</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
       </div>
     </div>
-
-  
   </body>
 </html>
