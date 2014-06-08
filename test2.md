@@ -138,7 +138,7 @@ alert('不会被执行！！！');
  Infinity * 0 // NaN
  Infinity * Infinity // Infinity
  "foo" * 2 // NaN
- 
+
  100 * true // 100，true 转成数值为1
  100 * '' // 0，''转成了0
  100 * null // 0，null 转成了0
@@ -170,8 +170,8 @@ alert('不会被执行！！！');
  ```
  12 % 5 // 2
  -1 % 2 // -1
- NaN % 2 // 
- 
+ NaN % 2 //
+
  10 % 3 // 1，余数为1
  100 % NaN // NaN
  Infinity % Infinity // NaN
@@ -198,7 +198,7 @@ alert('不会被执行！！！');
 - `--`：自减
 
  ```
- // 先赋值再自减 
+ // 先赋值再自减
  var x = 3;
  y = x--; // y = 3, x = 2
 
@@ -302,6 +302,29 @@ alert('不会被执行！！！');
  n1=!true              // !t returns false
  n2=!false             // !f returns true
  n3=!"Cat"             // !t returns false
+ ```
+
+***
+
+**赋值运算符**
+
+`=, *=, /=, %=, +=, -=, <<=, >>=, >>>=, &=, ^=, |=`
+- 赋值运算符将右边表达式的值赋值给左边的变量
+
+ ```
+ |Shorthand operator | Meaning     |
+ | x = y             | x = y       |
+ | x += y            | x = x + y   |
+ | x -= y            | x = x - y   |
+ | x *= y            | x = x * y   |
+ | x /= y            | x = x / y   |
+ | x %= y            | x = x % y   |
+ | x <<= y           | x = x << y  |
+ | x >>= y           | x = x >> y  |
+ | x >>>= y          | x = x >>> y |
+ | x &= y            | x = x & y   |
+ | x ^= y            | x = x ^ y   |
+ | x |= y            | x = x | y   |
  ```
 
 ## 数据类型
