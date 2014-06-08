@@ -91,6 +91,135 @@ alert('不会被执行！！！');
  typeof null === 'object'; // 从JavaScript诞生以来,一直是这样的.
  ```
 
+**算术运算符**
+
+- `+`：对数字进行加法运算或者连接字符串
+
+ ```
+ // Number + Number -> 加法运算
+ 1 + 2 // 7
+
+ // Boolean + Number -> 加法运算
+ true + 1 // 2
+
+ // Boolean + Boolean -> 加法运算
+ false + false // 0
+
+ // Number + String -> 连接字符串操作
+ 5 + "foo" // "5foo"
+
+ // String + Boolean -> 连接字符串操作
+ "foo" + false // "foofalse"
+
+ // String + String -> 连接字符串操作
+ "foo" + "bar" // "foobar"
+ ```
+
+- `-`：减法
+
+ ```
+ 5 - 3 // 2
+ 3 - 5 // -2
+ "foo" - 3 // NaN
+ 1 - NaN // NaN，只要有一个NaN就为NaN
+ -100 - -70 // -30，即：-100 - (-70)
+ 100 - true // 99，true转成数值为1
+ ```
+
+- `*`：乘法
+
+ ```
+ 2 * 2 // 4
+ -2 * 2 // -4
+ Infinity * 0 // NaN
+ Infinity * Infinity // Infinity
+ "foo" * 2 // NaN
+ 
+ 100 * true // 100，true 转成数值为1
+ 100 * '' // 0，''转成了0
+ 100 * null // 0，null 转成了0
+ ```
+
+- `/`：除法
+
+ ```
+ 1 / 2      // 0.5
+ 1.0 / 2.0  // 0.5
+ 2.0 / 0    // Infinity
+ 2.0 / 0.0  // Infinity
+ 2.0 / -0.0 // -Infinity
+
+ 100 / 70 // 1.42....
+ 100 / NaN // NaN
+ Infinity / Infinity // NaN
+ -Infinity / Infinity // NaN
+ -Infinity / -Infinity // NaN
+ 100 / true // 100，true 转成1
+ 100 / '' // Infinity
+ 100 / null // Infinity
+ 100 / 'Lee' // NaN
+ 100 / 对象 // NaN，如果有toString()或valueOf()，则返回10 / 返回数的值
+ ```
+
+- `%`：取模
+
+ ```
+ 12 % 5 // 2
+ -1 % 2 // -1
+ NaN % 2 // 
+ 
+ 10 % 3 // 1，余数为1
+ 100 % NaN // NaN
+ Infinity % Infinity // NaN
+ -Infinity % Infinity // NaN
+ -Infinity % -Infinity // NaN
+ 100 % true // 0
+ 100 % '' // NaN
+ 100 % null // NaN
+ 100 % 'Lee' // NaN
+ ```
+
+- `++`：自增
+
+ ```
+ // 先赋值再自增
+ var x = 3;
+ y = x++; // y = 3, x = 4
+
+ // 先自增再赋值
+ var a = 2;
+ b = ++a; // a = 3, b = 3
+ ```
+
+- `--`：自减
+
+ ```
+ // 先赋值再自减 
+ var x = 3;
+ y = x--; // y = 3, x = 2
+
+ // 先自减再赋值
+ var a = 2;
+ b = --a; // a = 1, b = 1
+ ```
+
+- 一元运算符`-`：负数
+
+ ```
+ var x = 3;
+ y = -x; // y = -3, x = 3
+ ```
+
+- 一元运算符`+`：正数
+
+ ```
+ +3     // 3
+ +"3"   // 3
+ +true  // 1
+ +false // 0
+ +null  // 0
+ ```
+
 ## 数据类型
 
 [[Back To Top]](#jump-to-section)
