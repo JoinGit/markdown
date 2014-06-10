@@ -720,13 +720,97 @@ alert('不会被执行！！！');
 
 ***
 
+**label**
+
+- label值可以是任何JavaScript的标识符，不能是关键字、保留字
+- 尽可能避免使用标签，因为它们使得程序难以阅读和理解
+- 语法
+
+ ```
+ label :
+    statement
+ ```
+ ```
+ // In this example, the label markLoop identifies a while loop.
+ // 在这个例子中，标签markLoop标识while循环
+ markLoop:
+ while (theMark == true) {
+    doSomething();
+ }
+ ```
+
+***
+
 **break**
 
 - 使用break语句来终止循环， switch ，或与一个标签语句一起
- - 当使用break没有标签，它会终止最内层的while， do-while， for，或switch立即将控制权转移到下面的语句
- - 当使用break一个标签，它会终止指定的标记语句
+ - 当使用break没有标签，它会终止最内层的while，do-while，for，或switch立即将控制权转移到下面的语句
+ - 当使用break一个标签，它会终止指定的标签代码块
 - 语法
  - `break;`
  - `break label;`
+
+ ```
+ var i, j;
+
+ loop1:
+ for (i = 0; i < 3; i++) {      // 第一个for循环被标记为 "loop1"
+    loop2:
+    for (j = 0; j < 3; j++) {    // 第二个for循环被标记为 "loop2"
+       if (i == 1 && j == 1) {
+          break loop1;
+       }
+       console.log("i = " + i + ", j = " + j);
+    }
+ }
+
+ // Output is:
+ //   "i = 0, j = 0"
+ //   "i = 0, j = 1"
+ //   "i = 0, j = 2"
+ //   "i = 1, j = 0"
+ // 注意它如何跳过了以下输出：
+ //   "i = 1, j = 1"
+ //   "i = 1, j = 2"
+ //   "i = 2, j = 0"
+ //   "i = 2, j = 1"
+ //   "i = 2, j = 2"
+ ```
+
+***
+
+**continue**
+
+- 在continue语句可用于重新启动while， do-while， for，或label语句
+ - 当使用continue没有标签，它会终止最内层的当前迭代while， do-while还是for语句并继续执行下一个迭代循环。与此相反的break声明，continue不会终止整个循环的执行。 在while循环，它跳回条件。在for循环，它跳转到increment-expression
+ - 当使用continue一个标签，它用于循环语句中的标签代码块
+- 语法
+ - `continue;`
+ - `continue label;`
+
+ ```
+ var i, j;
+
+ loop1:
+ for (i = 0; i < 3; i++) {      // 第一个for循环被标记为 "loop1"
+    loop2:
+    for (j = 0; j < 3; j++) {    // 第二个for循环被标记为 "loop2"
+       if (i == 1 && j == 1) {
+          continue loop1;
+       }
+       console.log("i = " + i + ", j = " + j);
+    }
+ }
+
+ // Output is:
+ //   "i = 0, j = 0"
+ //   "i = 0, j = 1"
+ //   "i = 0, j = 2"
+ //   "i = 1, j = 0"
+ //   "i = 2, j = 0"
+ //   "i = 2, j = 1"
+ //   "i = 2, j = 2"
+ // 注意它如何跳过了 "i = 1, j = 1" 和 "i = 1, j = 2"
+ ```
 
 ***
