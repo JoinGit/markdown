@@ -594,3 +594,139 @@ alert('不会被执行！！！');
  ```
 
 - `JavaScript`语言的所有对象都是由`Object`衍生的对象；所有对象都继承了`Object.prototype`的方法和属性，尽管它们可能被覆盖。原型对象的更改会传播给所有的对象，除非这些属性和方法受到了原型链中那些进一步的变化的覆盖。
+
+## 流程控制语句
+
+[[Back To Top]](#jump-to-section)
+
+**if...else**
+
+- 语法
+
+ ```
+ if (condition)
+   statement_1
+ [else
+   statement_2]
+
+ if (condition)
+   statement_1
+ [else if (condition_2)
+   statement_2]
+ ...
+ [else if (condition_n_1)
+   statement_n_1]
+ [else
+   statement_n]
+
+ if (condition) {
+   statements_1
+ } else {
+   statements_2
+ }
+ ```
+
+- 下面的值计算结果将为false；所有其它值，包括所有对象将为true
+ - false
+ - undefined
+ - null
+ - 0
+ - NaN
+ - the empty string ("")
+
+***
+
+**switch**
+
+- 语法
+
+ ```
+ switch (expression) {
+    case label_1:
+       statements_1
+       [break;]
+    case label_2:
+       statements_2
+       [break;]
+    ...
+    default:
+       statements_def
+       [break;]
+ }
+ ```
+
+***
+
+**do...while**
+
+- 先运行，后判断的循环语句。也就是说，不管条件是否满足，至少先运行一次循环体
+- 语法
+
+ ```
+ do [{]
+    statement
+ [}] while (condition);
+ ```
+
+***
+
+**while**
+
+- 语法
+
+ ```
+ while (condition) [{]
+    statement
+ [}]
+ ```
+
+***
+
+**for**
+
+- 语法
+
+ ```
+ for ([initialExpression]; [condition]; [incrementExpression]) [{]
+    statement
+ [}]
+ ```
+ ```
+ for (var i = 0; i < 10; i++) {
+    console.log(i); // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+ }
+ ```
+
+***
+
+**for...in**
+
+- 遍历对象的所有属性
+- 语法
+
+ ```
+ for (variable in object) {
+    statements
+ }
+ ```
+ ```
+ var sum = 0;
+ var obj = {prop1: 5, prop2: 13, prop3: 8};
+ for (var item in obj) {
+   console.log(item); // prop1, prop2, prop3
+   console.log(obj[item]); // 5, 13, 8
+ }
+ ```
+
+***
+
+**break**
+
+- 使用break语句来终止循环， switch ，或与一个标签语句一起
+ - 当使用break没有标签，它会终止最内层的while， do-while， for，或switch立即将控制权转移到下面的语句
+ - 当使用break一个标签，它会终止指定的标记语句
+- 语法
+ - `break;`
+ - `break label;`
+
+***
