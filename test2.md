@@ -1303,11 +1303,11 @@ square1 = function (n) {
 **数组的方法**
 
 - `concat()` 将传入的数组或非数组值与原数组合并，组成一个新的数组并返回
- - `concat`方法将调用它的对象(`this`指向的对象)中的元素和若干个参数中的数组类型的参数中的元素以及非数组类型的参数本身按照顺序组合成一个新数组，并返回
- - `concat`方法并不修改调用它的对象(`this`指向的对象) 和参数中的各个数组本身的值，而是将它们的每个元素拷贝一份放在组合成的新数组中。原数组中的元素有两种被拷贝的方式：
-   - 对象引用(非对象直接量)：`concat`方法会复制对象引用放到组合的新数组里，原数组和新数组中的对象引用都指向同一个实际的对象。所以，当实际的对象被修改时，两个数组也同时会被修改
-   - 字符串和数字(是原始值，而不是包装原始值的`String`和`Number`对象)：`concat`方法会复制字符串和数字的值放到新数组里
- - 对新数组的任何操作都不会对原数组产生影响，反之亦然
+  - `concat`方法将调用它的对象(`this`指向的对象)中的元素和若干个参数中的数组类型的参数中的元素以及非数组类型的参数本身按照顺序组合成一个新数组，并返回
+  - `concat`方法并不修改调用它的对象(`this`指向的对象) 和参数中的各个数组本身的值，而是将它们的每个元素拷贝一份放在组合成的新数组中。原数组中的元素有两种被拷贝的方式：
+    - 对象引用(非对象直接量)：`concat`方法会复制对象引用放到组合的新数组里，原数组和新数组中的对象引用都指向同一个实际的对象。所以，当实际的对象被修改时，两个数组也同时会被修改
+    - 字符串和数字(是原始值，而不是包装原始值的`String`和`Number`对象)：`concat`方法会复制字符串和数字的值放到新数组里
+  - 对新数组的任何操作都不会对原数组产生影响，反之亦然
 
  ```
  var myArray = new Array("1", "2", "3");
@@ -1335,7 +1335,7 @@ square1 = function (n) {
  ```
 
 - `join(separator)` 将数组的所有元素连接成一个字符串
- - `separator` 指定连接每个数组元素的分隔符，如果省略的话，默认为一个逗号`,`
+  - `separator` 指定连接每个数组元素的分隔符，如果省略的话，默认为一个逗号`,`
 
  ```
  var a = new Array("Wind","Rain","Fire");
@@ -1396,7 +1396,7 @@ square1 = function (n) {
  ```
  var myArray = new Array ("1", "2", "3", "4", "5");
  myArray.splice(1, 3, "a", "b", "c", "d"); // myArray is now ["1", "a", "b", "c", "d", "5"]
- // This code started at index one (or where the "2" was), removed 3 elements there, 
+ // This code started at index one (or where the "2" was), removed 3 elements there,
  // and then inserted all consecutive elements in its place.
  ```
 
@@ -1409,17 +1409,17 @@ square1 = function (n) {
  ```
 
 - `sort()` 对数组元素进行排序
- - `sort()` 也可以接收一个函数用于判定元素的比较结果。该函数对两个值进行比较并且返回以下三个值之一：
-   - 如果在排序方式中`a`小于`b`，则返回`-1`(或任何负数)
-   - 如果在排序方式中`a`大于`b`，则返回`1 `(或任意正数)
-   - 如果`a`和`b`相等，则返回`0`
- - `sort()` 对数字排序和字符串排序算法是一致的
+  - `sort()` 也可以接收一个函数用于判定元素的比较结果。该函数对两个值进行比较并且返回以下三个值之一：
+    - 如果在排序方式中`a`小于`b`，则返回`-1`(或任何负数)
+    - 如果在排序方式中`a`大于`b`，则返回`1 `(或任意正数)
+    - 如果`a`和`b`相等，则返回`0`
+  - `sort()` 对数字排序和字符串排序算法是一致的
 
  ```
  var myArray = new Array("Wind", "Rain", "Fire");
  myArray.sort(); // sorts the array so that myArrray = [ "Fire", "Rain", "Wind" ]
  console.log(myArray);
- 
+
  function compare(a, b) {
    if (a < b)
       return -1;
@@ -1430,14 +1430,14 @@ square1 = function (n) {
  var box = [0, 1, 5, 10, 15];
  box.sort(box)
  console.log(box); // [0, 1, 10, 15, 5]
- console.log(box.sort(compare)); // [0, 1, 5, 10, 15] 
+ console.log(box.sort(compare)); // [0, 1, 5, 10, 15]
  ```
 
 **以下方法在`JavaScript 1.6`引入**
 
 - `indexOf(searchElement[, fromIndex])` 返回根据给定元素找到的第一个索引值，否则返回`-1`，搜索按升序索引顺序进行
- - `indexOf`使用strict equality（`===`）
- - `fromIndex` 该值为开始查找指定元素的索引值，默认值: `0`。如果该索引值大于或等于数组长度，则停止查找并返回`-1`。如果参数中提供的索引值是一个负值，则将其作为数组末尾的一个抵消，即-1表示从最后一个元素开始查找，`-2`表示从倒数第二个元素开始查找，以此类推。 **注意**：如果参数中提供的索引值是一个负值，仍然从前向后查询数组。如果抵消后的索引值仍小于`0`，则整个数组都将会被查询。
+  - `indexOf`使用strict equality（`===`）
+  - `fromIndex` 该值为开始查找指定元素的索引值，默认值: `0`。如果该索引值大于或等于数组长度，则停止查找并返回`-1`。如果参数中提供的索引值是一个负值，则将其作为数组末尾的一个抵消，即-1表示从最后一个元素开始查找，`-2`表示从倒数第二个元素开始查找，以此类推。 **注意**：如果参数中提供的索引值是一个负值，仍然从前向后查询数组。如果抵消后的索引值仍小于`0`，则整个数组都将会被查询。
 
  ```
  var a = ['a', 'b', 'a', 'b', 'a'];
@@ -1448,8 +1448,8 @@ square1 = function (n) {
  ```
 
 - `lastIndexOf(searchElement[, fromIndex])` 返回根据给定元素找到的第一个索引值，否则返回`-1`，搜索按降序索引顺序进行
- - `lastIndexOf`使用strict equality（`===`）
- - `fromIndex` 该值为开始查找指定元素的索引值，默认值: 数组的长度。如果`fromIndex`大于或等于数组长度，则搜索整个数组。如果`fromIndex`为负，则搜索从数组长度加上`fromIndex`的位置处开始。如果计算所得的索引小于`0`，则返回`-1`。
+  - `lastIndexOf`使用strict equality（`===`）
+  - `fromIndex` 该值为开始查找指定元素的索引值，默认值: 数组的长度。如果`fromIndex`大于或等于数组长度，则搜索整个数组。如果`fromIndex`为负，则搜索从数组长度加上`fromIndex`的位置处开始。如果计算所得的索引小于`0`，则返回`-1`。
 
  ```
  var array = [2, 5, 9, 2];
@@ -1462,8 +1462,7 @@ square1 = function (n) {
  ```
 
 - `forEach(callback[, thisArg])` 为每个数组元素执行一次指定的函数
-  - `callback` 为每个数组元素执行的函数，`callbac
-  - k`函数会被依次传入三个参数：
+  - `callback` 为每个数组元素执行的函数，`callback`函数会被依次传入三个参数：
     - 元素值
     - 元素索引
     - 被遍历的数组对象本身
@@ -1492,11 +1491,11 @@ square1 = function (n) {
  ```
  // Example: 将一个数组中的所有单词转换成对应的复数形式
  function fuzzyPlural(single) {
-   var result = single.replace(/o/g, 'e');  
+   var result = single.replace(/o/g, 'e');
    if( single === 'kangaroo'){
      result += 'se';
    }
-   return result; 
+   return result;
  }
 
  var words = ["foot", "goose", "moose", "kangaroo"];
