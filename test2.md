@@ -1584,15 +1584,15 @@ square1 = function (n) {
  console.log(passed); // passed is false
  ```
 
- ***
+***
 
- ### RegExp Object
+### RegExp Object
 
- 创建一个正则表达式对象，用特定的模式匹配文本
+创建一个正则表达式对象，用特定的模式匹配文本
 
- **创建正则表达式**
+**创建正则表达式**
 
- - `/pattern/flags` 使用字面量方式创建
+- `/pattern/flags` 使用字面量方式创建
   - `pattern` 正则表达式的文本
   - `flags` 该参数可以是下面几个值的任意组合
     - `g` 全局匹配
