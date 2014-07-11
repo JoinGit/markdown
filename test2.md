@@ -1593,11 +1593,11 @@ square1 = function (n) {
  **创建正则表达式**
 
  - `/pattern/flags` 使用字面量方式创建
-   - `pattern` 正则表达式的文本
-   - `flags` 该参数可以是下面几个值的任意组合
-     - `g` 全局匹配
-     - `i` 忽略大小写
-     - `m` 让开始和结束锚点（`^`和`$`）工作在多行模式（也就是，`^`和`$`可以匹配字符串中每一行的开始和结束（行是由`\n`或`\r`分割的），而不只是整个输入字符串的最开始和最末尾处）
+  - `pattern` 正则表达式的文本
+  - `flags` 该参数可以是下面几个值的任意组合
+    - `g` 全局匹配
+    - `i` 忽略大小写
+    - `m` 让开始和结束锚点（`^`和`$`）工作在多行模式（也就是，`^`和`$`可以匹配字符串中每一行的开始和结束（行是由`\n`或`\r`分割的），而不只是整个输入字符串的最开始和最末尾处）
 
  ```
  var re = /ab+c/;
@@ -1605,7 +1605,7 @@ square1 = function (n) {
  var re = /ab+c/igm;
  ```
 
-- `RegExp(pattern [, flags])` 调用RegExp对象的构造函数
+- `RegExp(pattern [, flags])` 调用`RegExp`对象的构造函数
 
  ```
  var re = new RegExp("ab+c");
@@ -1778,3 +1778,6 @@ square1 = function (n) {
  console.log(s2);
  // Output: Water freezes at 0C and boils at 100C.
  ```
+
+ ***
+
