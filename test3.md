@@ -30,31 +30,33 @@
 - `git config user.name` 查看某个环境变量的设定
 - `git config --global core.autocrlf false/true/input`
   - 在`Windows`系统上，把它设置成`true`，这样当签出代码时，`LF`会被转换成`CRLF`
-  - `Linux或`Mac`系统上，如果你不想`Git`在签出文件时进行自动的转换；当一个以`CRLF`为行结束符的文件不小心被引入时你肯定想进行修正，设置成`input`来告诉`Git`在提交时把`CRLF`转换成`LF`，签出时不转换
+  - `Linux`或`Mac`系统上，如果你不想`Git`在签出文件时进行自动的转换；当一个以`CRLF`为行结束符的文件不小心被引入时你肯定想进行修正，设置成`input`来告诉`Git`在提交时把`CRLF`转换成`LF`，签出时不转换
   - 如果仅运行在`Windows`上的项目，可以设置`false`取消此功能，把回车符记录在库中
 - `git config --global core.whitespace trailing-space,space-before-tab,indent-with-non-tab`
   - 默认被打开的`2`个选项是`trailing-space`和`space-before-tab`，`trailing-space`会查找每行结尾的空格，`space-before-tab`会查找每行开头的制表符前的空格。
   - 默认被关闭的`2`个选项是`indent-with-non-tab`和`cr-at-eol`，`indent-with-non-tab`会查找`8`个以上空格（非制表符）开头的行，`cr-at-eol`让`Git`知道行尾回车符是合法的。
 - `git config --global http.proxy http://130.147.222.32:808` 设置`http`代理，适用于`http_proxy`, `https_proxy`
   - 或者直接在命令行中设置
-    ```
+
+     ```
      export HTTPS_PROXY=http://130.147.222.32:808
-    ```
+     ```
+
   - 或者在~/.bashrc中设置
-    ```
+     ```
      export http_proxy=http://130.147.222.32:808
      export https_proxy=http://130.147.222.32:808
      export ftp_proxy=http://130.147.222.32:808
      export no_proxy='.example.com'
-    ```
+     ```
 
 ## `git clone`
 
 **`git clone` 使用语法**
 
-1. git clone <repository> <directory>
-2. git clone --bare <repository> <directory.git>
-3. git clone --mirror <repository> <directory.git>
+1. `git clone <repository> <directory>`
+2. `git clone --bare <repository> <directory.git>`
+3. `git clone --mirror <repository> <directory.git>`
 
 **用法区别：**
 - 用法`1`将`<repository>`指向的版本库创建一个克隆到`<directory>`目录。目录`<directory`相当于克隆版本库的工作区，文件都会检出，版本库位于工作区下`.git`目录中
@@ -106,18 +108,19 @@
 
 
 ## `git diff`
-`git diff` 比较工作区和暂存区
-`git diff --word-diff` 逐词比较，而非默认的逐行比较
-`git diff --cached` 比较暂存区和`HEAD`
-`git diff --staged` 等同于`git diff --cached`，`Git 1.6.1`之后支持
-`git diff HEAD` 比较工作区和`HEAD`
-`git diff <$id1> <$id2>` 用`SHA1 ID`值（前`7`位即可）比较两次提交之间的差异。注意顺序不一样，查看到的结果也会不一样
-`git diff <branch1> <branch2>` 在两个分支之间比较，只比较已经提交的内容，同样可以比较远程分支（`git diff pro/master pro/b1`，注：先执行`git fetch`）
-`git diff <branch2> [current-branch]` 用当前分支比较另外一个分支，同样可以比较远程分支（`git diff pro/b1`，注：先执行`git fetch`）
-`git diff` <任意有效可以进行比较的> 比较工作区和目标
-`git diff --stat` 比较之后，显示简要的增改行数统计
-`git diff --binary` 比较二进制文件差异
-`git checkout [HEAD]` 汇总显示工作区、暂存区与`HEAD`的差异
+
+- `git diff` 比较工作区和暂存区
+- `git diff --word-diff` 逐词比较，而非默认的逐行比较
+- `git diff --cached` 比较暂存区和`HEAD`
+- `git diff --staged` 等同于`git diff --cached`，`Git 1.6.1`之后支持
+- `git diff HEAD` 比较工作区和`HEAD`
+- `git diff <$id1> <$id2>` 用`SHA1 ID`值（前`7`位即可）比较两次提交之间的差异。注意顺序不一样，查看到的结果也会不一样
+- `git diff <branch1> <branch2>` 在两个分支之间比较，只比较已经提交的内容，同样可以比较远程分支（`git diff pro/master pro/b1`，注：先执行`git fetch`）
+- `git diff <branch2> [current-branch]` 用当前分支比较另外一个分支，同样可以比较远程分支（`git diff pro/b1`，注：先执行`git fetch`）
+- `git diff` <任意有效可以进行比较的> 比较工作区和目标
+- `git diff --stat` 比较之后，显示简要的增改行数统计
+- `git diff --binary` 比较二进制文件差异
+- `git checkout [HEAD]` 汇总显示工作区、暂存区与`HEAD`的差异
 
 
 ## `git stash`
